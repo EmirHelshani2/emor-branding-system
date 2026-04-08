@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 import {
   ArrowRight,
   Bot,
@@ -178,7 +177,7 @@ const Services = () => {
   ];
 
   return (
-    <main className="pb-24">
+    <main className="pb-20 md:pb-24">
       <PageHero
         label={t("Shërbimet", "Services")}
         title={t(
@@ -205,9 +204,9 @@ const Services = () => {
         ]}
       />
 
-      <section className="section-padding pt-10">
+      <section className="section-padding pt-8">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="space-y-8">
+          <div className="space-y-6">
             {services.map((service, index) => (
               <PremiumCard
                 key={service.titleEn}
@@ -216,47 +215,47 @@ const Services = () => {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
                 variants={fadeUp}
-                className="px-6 py-6 md:px-8 md:py-8"
+                className="px-5 py-5 md:px-6 md:py-6"
               >
-                <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
+                <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
                   <div>
                     <div className="flex flex-wrap items-center gap-4">
-                      <div className="flex h-14 w-14 items-center justify-center rounded-[1.15rem] border border-primary/15 bg-primary/10 text-primary">
-                        <service.icon size={24} />
+                      <div className="flex h-12 w-12 items-center justify-center rounded-[1rem] border border-primary/15 bg-primary/10 text-primary">
+                        <service.icon size={20} />
                       </div>
                       <div>
-                        <p className="text-[0.72rem] uppercase tracking-[0.24em] text-primary/90">
+                        <p className="text-[0.68rem] uppercase tracking-[0.2em] text-primary/90">
                           {t(service.metricAl, service.metricEn)}
                         </p>
-                        <p className="mt-1 text-sm font-medium text-white/80">
+                        <p className="mt-1 text-[0.9rem] font-medium text-white/80">
                           {service.metricValue}
                         </p>
                       </div>
                     </div>
 
-                    <h2 className="mt-6 text-2xl font-bold tracking-[-0.04em] text-white md:text-[2rem]">
+                    <h2 className="mt-5 text-[1.55rem] font-bold tracking-[-0.04em] text-white md:text-[1.75rem]">
                       {t(service.titleAl, service.titleEn)}
                     </h2>
-                    <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">
+                    <p className="mt-3 max-w-2xl text-[0.94rem] leading-relaxed text-muted-foreground md:text-[0.98rem]">
                       {t(service.descAl, service.descEn)}
                     </p>
 
-                    <div className="mt-6 rounded-[1.25rem] border border-primary/15 bg-primary/[0.06] p-5">
-                      <p className="text-[0.72rem] uppercase tracking-[0.24em] text-primary/90">
+                    <div className="mt-5 rounded-[1.1rem] border border-primary/15 bg-primary/[0.06] p-4">
+                      <p className="text-[0.68rem] uppercase tracking-[0.2em] text-primary/90">
                         {t("Ideal për", "Ideal for")}
                       </p>
-                      <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                      <p className="mt-2.5 text-[0.92rem] leading-relaxed text-muted-foreground">
                         {t(service.fitAl, service.fitEn)}
                       </p>
                     </div>
                   </div>
 
-                  <div className="flex h-full flex-col justify-between rounded-[1.35rem] border border-white/10 bg-white/[0.03] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
+                  <div className="flex h-full flex-col justify-between rounded-[1.15rem] border border-white/10 bg-white/[0.03] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
                     <div>
-                      <p className="text-[0.72rem] uppercase tracking-[0.24em] text-primary/90">
+                      <p className="text-[0.68rem] uppercase tracking-[0.2em] text-primary/90">
                         {t("Çfarë përfshihet", "What is included")}
                       </p>
-                      <div className="mt-5 space-y-3">
+                      <div className="mt-4 space-y-2.5">
                         {(
                           t(
                             service.benefitsAl.join("|"),
@@ -267,7 +266,7 @@ const Services = () => {
                           .map((item) => (
                             <div
                               key={item}
-                              className="flex items-start gap-3 text-sm text-muted-foreground"
+                              className="flex items-start gap-3 text-[0.92rem] text-muted-foreground"
                             >
                               <CheckCircle2
                                 size={16}
@@ -279,7 +278,7 @@ const Services = () => {
                       </div>
                     </div>
 
-                    <Link to="/contact" className="btn-secondary mt-8 w-full">
+                    <Link to="/contact" className="btn-secondary mt-6 w-full">
                       {t("Diskuto këtë shërbim", "Discuss this service")}{" "}
                       <ArrowRight size={16} />
                     </Link>

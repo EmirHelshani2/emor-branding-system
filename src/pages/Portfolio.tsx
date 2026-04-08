@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { ArrowUpRight, BarChart3, Globe, Megaphone, Sparkles } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import PremiumCard from "@/components/PremiumCard";
@@ -68,7 +67,7 @@ const Portfolio = () => {
   ];
 
   return (
-    <main className="pb-24">
+    <main className="pb-20 md:pb-24">
       <PageHero
         label={t("Punët tona", "Our work")}
         title={t(
@@ -95,9 +94,9 @@ const Portfolio = () => {
         ]}
       />
 
-      <section className="section-padding pt-10">
+      <section className="section-padding pt-8">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid gap-5 md:grid-cols-2">
             {projects.map((project, index) => (
               <PremiumCard
                 key={project.titleEn}
@@ -106,35 +105,35 @@ const Portfolio = () => {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
                 variants={fadeUp}
-                className="px-6 py-6 md:px-8 md:py-8"
+                className="px-5 py-5 md:px-6 md:py-6"
               >
                 <div className="flex items-start justify-between gap-4">
                   <span className="premium-badge">
                     <project.icon size={12} />
                     {t(project.categoryAl, project.categoryEn)}
                   </span>
-                  <span className="inline-flex items-center gap-1 text-sm font-medium text-primary">
-                    <ArrowUpRight size={16} />
+                  <span className="inline-flex items-center gap-1 text-[0.86rem] font-medium text-primary">
+                    <ArrowUpRight size={15} />
                     {t("Case snapshot", "Case snapshot")}
                   </span>
                 </div>
 
-                <div className="mt-8 rounded-[1.4rem] border border-primary/12 bg-[radial-gradient(circle_at_top_right,rgba(212,177,61,0.12),transparent_26%),linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01))] p-6">
-                  <div className="panel-grid h-44 rounded-[1rem] border border-white/10 bg-background/55" />
+                <div className="mt-6 rounded-[1.2rem] border border-primary/12 bg-[radial-gradient(circle_at_top_right,rgba(212,177,61,0.12),transparent_26%),linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01))] p-5">
+                  <div className="panel-grid h-36 rounded-[0.95rem] border border-white/10 bg-background/55" />
                 </div>
 
-                <h2 className="mt-8 text-2xl font-bold tracking-[-0.04em] text-white">
+                <h2 className="mt-6 text-[1.45rem] font-bold tracking-[-0.04em] text-white md:text-[1.65rem]">
                   {t(project.titleAl, project.titleEn)}
                 </h2>
-                <p className="mt-4 text-sm leading-relaxed text-muted-foreground md:text-base">
+                <p className="mt-3 text-[0.94rem] leading-relaxed text-muted-foreground md:text-[0.98rem]">
                   {t(project.descAl, project.descEn)}
                 </p>
 
-                <div className="mt-6 rounded-[1.2rem] border border-white/10 bg-white/[0.03] p-4">
-                  <p className="text-[0.72rem] uppercase tracking-[0.24em] text-primary/90">
+                <div className="mt-5 rounded-[1rem] border border-white/10 bg-white/[0.03] p-3.5">
+                  <p className="text-[0.68rem] uppercase tracking-[0.2em] text-primary/90">
                     {t(project.resultAl, project.resultEn)}
                   </p>
-                  <p className="mt-3 text-lg font-semibold text-white">
+                  <p className="mt-2.5 text-base font-semibold text-white">
                     {project.resultValue}
                   </p>
                 </div>

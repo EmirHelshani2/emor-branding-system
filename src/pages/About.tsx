@@ -61,7 +61,7 @@ const About = () => {
   ];
 
   return (
-    <main className="pb-24">
+    <main className="pb-20 md:pb-24">
       <PageHero
         label={t("Rreth EMOR", "About EMOR")}
         title={t(
@@ -88,7 +88,7 @@ const About = () => {
         ]}
       />
 
-      <section className="section-padding pt-10">
+      <section className="section-padding pt-8">
         <div className="container mx-auto px-4 lg:px-8">
           <motion.div
             initial="hidden"
@@ -96,20 +96,20 @@ const About = () => {
             viewport={{ once: true, amount: 0.2 }}
             variants={softReveal}
           >
-            <PremiumCard interactive={false} className="px-6 py-6 md:px-10 md:py-10">
-              <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+            <PremiumCard interactive={false} className="px-5 py-5 md:px-8 md:py-8">
+              <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
                 <div>
                   <span className="premium-badge">
                     <span className="h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_14px_rgba(212,177,61,0.8)]" />
                     {t("Çfarë ndërtojmë", "What we build")}
                   </span>
-                  <h2 className="mt-6 text-[2rem] font-bold tracking-[-0.045em] text-white md:text-[2.35rem]">
+                  <h2 className="mt-5 text-[1.75rem] font-bold tracking-[-0.045em] text-white md:text-[2.05rem]">
                     {t(
-                      "Një sistem të plotë prezence për markat që duan të duken më serioze online.",
+                      "Një sistem i plotë prezence për markat që duan të duken më serioze online.",
                       "A complete presence system for brands that want to look more serious online."
                     )}
                   </h2>
-                  <p className="mt-5 max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">
+                  <p className="mt-4 max-w-2xl text-[0.94rem] leading-relaxed text-muted-foreground md:text-[0.98rem]">
                     {t(
                       "EMOR ndihmon bizneset në Kosovë dhe më gjerë të duken më të kuruara, të komunikojnë më qartë dhe të konvertojnë më mirë. Ne ndërtojmë prezencë që ndihet premium jo vetëm në pamje, por edhe në mënyrën si organizohet dhe si performon.",
                       "EMOR helps businesses in Kosovo and beyond look more curated, communicate with more clarity, and convert better. We build presence that feels premium not just in appearance, but in the way it is organized and how it performs."
@@ -118,14 +118,14 @@ const About = () => {
                 </div>
 
                 <div className="grid gap-4 sm:grid-cols-2">
-                  <div className="rounded-[1.3rem] border border-white/10 bg-white/[0.03] p-5">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full border border-primary/15 bg-primary/10 text-primary">
-                      <Target size={20} />
+                  <div className="rounded-[1.15rem] border border-white/10 bg-white/[0.03] p-4">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-full border border-primary/15 bg-primary/10 text-primary">
+                      <Target size={18} />
                     </div>
-                    <h3 className="mt-5 text-xl font-semibold text-white">
+                    <h3 className="mt-4 text-lg font-semibold text-white">
                       {t("Misioni", "Mission")}
                     </h3>
-                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                    <p className="mt-2.5 text-[0.92rem] leading-relaxed text-muted-foreground">
                       {t(
                         "T'i ndihmojmë bizneset të ndërtojnë prani digjitale profesionale, të strukturuar dhe të besueshme.",
                         "To help businesses build professional, structured, and trustworthy digital presence."
@@ -133,14 +133,14 @@ const About = () => {
                     </p>
                   </div>
 
-                  <div className="rounded-[1.3rem] border border-white/10 bg-white/[0.03] p-5">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full border border-primary/15 bg-primary/10 text-primary">
-                      <Eye size={20} />
+                  <div className="rounded-[1.15rem] border border-white/10 bg-white/[0.03] p-4">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-full border border-primary/15 bg-primary/10 text-primary">
+                      <Eye size={18} />
                     </div>
-                    <h3 className="mt-5 text-xl font-semibold text-white">
+                    <h3 className="mt-4 text-lg font-semibold text-white">
                       {t("Vizioni", "Vision")}
                     </h3>
-                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                    <p className="mt-2.5 text-[0.92rem] leading-relaxed text-muted-foreground">
                       {t(
                         "Të jemi referencë për markat që duan standard më të lartë në dizajn, komunikim dhe rritje.",
                         "To be the reference point for brands that want a higher standard in design, communication, and growth."
@@ -168,7 +168,7 @@ const About = () => {
             )}
           />
 
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="grid gap-5 md:grid-cols-3">
             {values.map((value, index) => (
               <PremiumCard
                 key={value.titleEn}
@@ -177,15 +177,15 @@ const About = () => {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
                 variants={fadeUp}
-                className="px-6 py-6"
+                className="px-5 py-5"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-[1rem] border border-primary/15 bg-primary/10 text-primary">
-                  <value.icon size={20} />
+                <div className="flex h-11 w-11 items-center justify-center rounded-[0.95rem] border border-primary/15 bg-primary/10 text-primary">
+                  <value.icon size={18} />
                 </div>
-                <h3 className="mt-6 text-xl font-semibold tracking-[-0.03em] text-white">
+                <h3 className="mt-5 text-lg font-semibold tracking-[-0.03em] text-white">
                   {t(value.titleAl, value.titleEn)}
                 </h3>
-                <p className="mt-4 text-sm leading-relaxed text-muted-foreground md:text-[0.96rem]">
+                <p className="mt-3 text-[0.92rem] leading-relaxed text-muted-foreground">
                   {t(value.descAl, value.descEn)}
                 </p>
               </PremiumCard>
@@ -205,7 +205,7 @@ const About = () => {
             )}
           />
 
-          <div className="grid gap-8 md:grid-cols-2">
+          <div className="grid gap-6 md:grid-cols-2">
             {founders.map((founder, index) => (
               <PremiumCard
                 key={founder.name}
@@ -214,21 +214,21 @@ const About = () => {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
                 variants={fadeUp}
-                className="px-6 py-6 text-center md:px-8 md:py-8"
+                className="px-5 py-5 text-center md:px-6 md:py-6"
               >
-                <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full border border-primary/15 bg-primary/10 text-3xl font-bold text-primary shadow-[0_0_36px_rgba(212,177,61,0.14)]">
+                <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full border border-primary/15 bg-primary/10 text-2xl font-bold text-primary shadow-[0_0_36px_rgba(212,177,61,0.14)]">
                   {founder.name
                     .split(" ")
                     .map((part) => part[0])
                     .join("")}
                 </div>
-                <h3 className="mt-6 text-[1.8rem] font-bold tracking-[-0.04em] text-white">
+                <h3 className="mt-5 text-[1.55rem] font-bold tracking-[-0.04em] text-white md:text-[1.7rem]">
                   {founder.name}
                 </h3>
-                <p className="mt-2 text-sm font-medium uppercase tracking-[0.2em] text-primary/90">
+                <p className="mt-2 text-[0.78rem] font-medium uppercase tracking-[0.18em] text-primary/90">
                   {t(founder.roleAl, founder.roleEn)}
                 </p>
-                <p className="mt-5 text-sm leading-relaxed text-muted-foreground md:text-base">
+                <p className="mt-4 text-[0.94rem] leading-relaxed text-muted-foreground md:text-[0.98rem]">
                   {t(founder.bioAl, founder.bioEn)}
                 </p>
               </PremiumCard>
