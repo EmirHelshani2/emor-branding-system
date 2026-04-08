@@ -1,10 +1,9 @@
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 import { ArrowRight, Check, Sparkles, Star } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import PremiumCard from "@/components/PremiumCard";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { fadeUp, softReveal } from "@/lib/motion";
+import { fadeUp } from "@/lib/motion";
 
 const Pricing = () => {
   const { t } = useLanguage();
@@ -83,7 +82,7 @@ const Pricing = () => {
   ];
 
   return (
-    <main className="pb-24">
+    <main className="pb-20 md:pb-24">
       <PageHero
         label={t("Planet tona", "Our plans")}
         title={t(
@@ -110,9 +109,9 @@ const Pricing = () => {
         ]}
       />
 
-      <section className="section-padding pt-10">
+      <section className="section-padding pt-8">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid gap-6 xl:grid-cols-3">
+          <div className="grid gap-5 xl:grid-cols-3">
             {plans.map((plan, index) => (
               <PremiumCard
                 key={plan.nameEn}
@@ -121,45 +120,47 @@ const Pricing = () => {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
                 variants={fadeUp}
-                className={`px-6 py-6 md:px-8 md:py-8 ${
-                  plan.highlight ? "border-primary/30 shadow-[0_26px_70px_-42px_rgba(212,177,61,0.55)]" : ""
+                className={`px-5 py-5 md:px-6 md:py-6 ${
+                  plan.highlight
+                    ? "border-primary/30 shadow-[0_26px_70px_-42px_rgba(212,177,61,0.55)]"
+                    : ""
                 }`}
               >
                 {plan.highlight && (
-                  <div className="absolute right-5 top-5 inline-flex items-center gap-1 rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-[0.7rem] font-semibold uppercase tracking-[0.24em] text-primary">
+                  <div className="absolute right-4 top-4 inline-flex items-center gap-1 rounded-full border border-primary/20 bg-primary/10 px-2.5 py-1 text-[0.66rem] font-semibold uppercase tracking-[0.2em] text-primary">
                     <Star size={12} />
                     {t("Më i zgjedhuri", "Most selected")}
                   </div>
                 )}
 
-                <div className="flex h-12 w-12 items-center justify-center rounded-[1rem] border border-primary/15 bg-primary/10 text-primary">
-                  <Sparkles size={20} />
+                <div className="flex h-11 w-11 items-center justify-center rounded-[0.95rem] border border-primary/15 bg-primary/10 text-primary">
+                  <Sparkles size={18} />
                 </div>
-                <h2 className="mt-6 text-2xl font-bold tracking-[-0.04em] text-white">
+                <h2 className="mt-5 text-[1.45rem] font-bold tracking-[-0.04em] text-white">
                   {t(plan.nameAl, plan.nameEn)}
                 </h2>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                <p className="mt-3 text-[0.92rem] leading-relaxed text-muted-foreground">
                   {t(plan.toneAl, plan.toneEn)}
                 </p>
 
-                <div className="mt-8 flex items-end gap-2">
-                  <span className="text-5xl font-extrabold tracking-[-0.06em] gold-gradient-text">
+                <div className="mt-6 flex items-end gap-2">
+                  <span className="text-[2.75rem] font-extrabold tracking-[-0.06em] gold-gradient-text md:text-[3rem]">
                     {plan.price}
                   </span>
-                  <span className="pb-1 text-sm text-muted-foreground">
+                  <span className="pb-1 text-[0.9rem] text-muted-foreground">
                     {t(plan.periodAl, plan.periodEn)}
                   </span>
                 </div>
 
-                <div className="mt-8 space-y-3 rounded-[1.3rem] border border-white/10 bg-white/[0.03] p-5">
+                <div className="mt-6 space-y-2.5 rounded-[1.15rem] border border-white/10 bg-white/[0.03] p-4">
                   {t(plan.featuresAl.join("|"), plan.featuresEn.join("|"))
                     .split("|")
                     .map((feature) => (
                       <div
                         key={feature}
-                        className="flex items-start gap-3 text-sm text-muted-foreground"
+                        className="flex items-start gap-3 text-[0.92rem] text-muted-foreground"
                       >
-                        <Check size={16} className="mt-0.5 shrink-0 text-primary" />
+                        <Check size={15} className="mt-0.5 shrink-0 text-primary" />
                         <span>{feature}</span>
                       </div>
                     ))}
@@ -167,7 +168,11 @@ const Pricing = () => {
 
                 <Link
                   to="/contact"
-                  className={plan.highlight ? "btn-primary mt-8 w-full" : "btn-secondary mt-8 w-full"}
+                  className={
+                    plan.highlight
+                      ? "btn-primary mt-6 w-full"
+                      : "btn-secondary mt-6 w-full"
+                  }
                 >
                   {t("Fillo tani", "Get started")} <ArrowRight size={16} />
                 </Link>
@@ -175,33 +180,27 @@ const Pricing = () => {
             ))}
           </div>
 
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={softReveal}
-            className="mt-8"
-          >
-            <PremiumCard interactive={false} className="px-6 py-6 text-center md:px-8 md:py-8">
+          <div className="mt-6">
+            <PremiumCard interactive={false} className="px-5 py-5 text-center md:px-6 md:py-6">
               <span className="premium-badge">
                 <span className="h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_14px_rgba(212,177,61,0.8)]" />
                 {t("Opsion i personalizuar", "Custom option")}
               </span>
-              <h3 className="mt-6 text-[2rem] font-bold tracking-[-0.045em] text-white md:text-[2.3rem]">
+              <h3 className="mt-5 text-[1.75rem] font-bold tracking-[-0.045em] text-white md:text-[2.05rem]">
                 {t("Keni nevojë për diçka të personalizuar?", "Need something custom?")}
               </h3>
-              <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">
+              <p className="mx-auto mt-4 max-w-2xl text-[0.94rem] leading-relaxed text-muted-foreground md:text-[0.98rem]">
                 {t(
                   "Nëse projekti juaj kërkon kombinim specifik të shërbimeve, ne mund të krijojmë ofertë të përshtatur sipas objektivave të markës suaj.",
                   "If your project needs a specific mix of services, we can create a tailored offer based on your brand goals."
                 )}
               </p>
-              <Link to="/contact" className="btn-primary mt-8">
+              <Link to="/contact" className="btn-primary mt-6">
                 {t("Kontakto për ofertë", "Contact for custom offer")}{" "}
                 <ArrowRight size={16} />
               </Link>
             </PremiumCard>
-          </motion.div>
+          </div>
         </div>
       </section>
     </main>

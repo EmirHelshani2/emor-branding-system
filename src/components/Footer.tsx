@@ -9,24 +9,24 @@ const Footer = () => {
 
   return (
     <footer className="border-t border-white/6 bg-secondary/25">
-      <div className="container mx-auto px-4 pb-10 pt-16 lg:px-8">
+      <div className="container mx-auto px-4 pb-8 pt-14 lg:px-8">
         <PremiumCard
           interactive={false}
-          className="mb-10 px-6 py-6 md:px-8 md:py-8"
+          className="mb-8 px-5 py-5 md:px-7 md:py-7"
         >
-          <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+          <div className="grid gap-5 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
             <div>
               <span className="premium-badge">
                 <Sparkles size={12} />
                 {t("EMOR Marketing", "EMOR Marketing")}
               </span>
-              <h2 className="mt-6 max-w-2xl text-[2rem] font-bold tracking-[-0.045em] text-white md:text-[2.45rem]">
+              <h2 className="mt-5 max-w-2xl text-[1.75rem] font-bold tracking-[-0.045em] text-white md:text-[2.1rem]">
                 {t(
                   "Një prezencë më premium fillon me strukturë më të fortë.",
                   "A more premium presence starts with stronger structure."
                 )}
               </h2>
-              <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">
+              <p className="mt-4 max-w-2xl text-[0.94rem] leading-relaxed text-muted-foreground md:text-[0.98rem]">
                 {t(
                   "Nëse doni që biznesi juaj të duket më i besueshëm, më modern dhe më bindës online, le ta ndërtojmë bashkë.",
                   "If you want your business to feel more trustworthy, modern, and persuasive online, let's build it together."
@@ -45,16 +45,16 @@ const Footer = () => {
           </div>
         </PremiumCard>
 
-        <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr_0.8fr_0.8fr]">
+        <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr_0.8fr_0.8fr]">
           <div>
-            <div className="rounded-[1.25rem] border border-white/8 bg-white/[0.02] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] inline-block">
+            <div className="inline-block rounded-[1.15rem] border border-white/8 bg-white/[0.02] p-3.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
               <img
                 src={logo}
                 alt="EMOR Marketing"
-                className="h-16 w-auto sm:h-20"
+                className="h-14 w-auto sm:h-16"
               />
             </div>
-            <p className="mt-5 max-w-sm text-sm leading-relaxed text-muted-foreground">
+            <p className="mt-4 max-w-sm text-[0.92rem] leading-relaxed text-muted-foreground">
               {t(
                 "Agjenci digjitale premium që ndërton prezencë më të fortë për markat që duan të duken serioze dhe moderne.",
                 "Premium digital agency building stronger presence for brands that want to feel serious and modern."
@@ -66,7 +66,7 @@ const Footer = () => {
             <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-primary/90">
               {t("Lidhje", "Links")}
             </h3>
-            <div className="mt-4 flex flex-col gap-3">
+            <div className="mt-3 flex flex-col gap-2.5">
               {[
                 { path: "/", al: "Ballina", en: "Home" },
                 { path: "/about", al: "Rreth nesh", en: "About" },
@@ -88,7 +88,7 @@ const Footer = () => {
             <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-primary/90">
               {t("Shërbime", "Services")}
             </h3>
-            <div className="mt-4 flex flex-col gap-3 text-sm text-muted-foreground">
+            <div className="mt-3 flex flex-col gap-2.5 text-sm text-muted-foreground">
               <span>{t("Menaxhim i rrjeteve sociale", "Social media management")}</span>
               <span>{t("Zhvillim websitesh", "Website development")}</span>
               <span>{t("Branding vizual", "Visual branding")}</span>
@@ -100,7 +100,7 @@ const Footer = () => {
             <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-primary/90">
               {t("Kontakt", "Contact")}
             </h3>
-            <div className="mt-4 flex flex-col gap-3">
+            <div className="mt-3 flex flex-col gap-2.5">
               <a
                 href="mailto:info@emormarketing.com"
                 className="flex items-center gap-2 text-sm text-muted-foreground transition hover:text-white"
@@ -121,7 +121,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-10 border-t border-white/8 pt-6 text-center">
+        <div className="mt-8 border-t border-white/8 pt-5 text-center">
           <p className="text-xs tracking-[0.18em] text-muted-foreground">
             © {new Date().getFullYear()} EMOR Marketing.{" "}
             {t("Të gjitha të drejtat e rezervuara.", "All rights reserved.")}

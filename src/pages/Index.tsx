@@ -228,11 +228,11 @@ const Index = () => {
 
   return (
     <main className="overflow-hidden">
-      <section className="section-shell relative flex min-h-[calc(100svh-5.25rem)] items-center overflow-hidden pt-8 md:min-h-[calc(100svh-6rem)] md:pt-12">
+      <section className="section-shell relative flex min-h-[calc(100svh-4.8rem)] items-center overflow-hidden pt-6 md:min-h-[calc(100svh-5.4rem)] md:pt-8">
         <HeroVideoBackground />
 
         <div className="container relative z-10 mx-auto px-4 lg:px-8">
-          <div className="grid gap-8 py-10 md:py-12 lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:py-16">
+          <div className="grid gap-7 py-8 md:py-10 lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:py-12">
             <motion.div
               initial="hidden"
               animate="visible"
@@ -244,21 +244,21 @@ const Index = () => {
                 {t("EMOR Premium Growth Systems", "EMOR Premium Growth Systems")}
               </span>
 
-              <h1 className="mt-5 max-w-4xl text-[2.5rem] font-extrabold leading-[1.05] tracking-[-0.05em] text-balance text-white sm:text-[3rem] md:text-[3.65rem] lg:text-[4rem] xl:text-[4.35rem]">
+              <h1 className="mt-4 max-w-4xl text-[2.2rem] font-extrabold leading-[1.06] tracking-[-0.05em] text-balance text-white sm:text-[2.65rem] md:text-[3.05rem] lg:text-[3.35rem] xl:text-[3.65rem]">
                 {t(
                   "I japim biznesit tuaj praninë që duket elitare, bind me qartësi dhe konverton me strategji.",
                   "We give your business a presence that looks elite, persuades with clarity, and converts with strategy."
                 )}
               </h1>
 
-              <p className="mt-5 max-w-2xl text-[1rem] leading-relaxed text-muted-foreground md:text-[1.08rem] lg:text-[1.12rem]">
+              <p className="mt-4 max-w-2xl text-[0.96rem] leading-relaxed text-muted-foreground md:text-[1rem] lg:text-[1.04rem]">
                 {t(
                   "Nga branding-u dhe përmbajtja deri te websites dhe reklamat, EMOR ndërton një sistem digjital premium që e bën markën tuaj të ndihet më serioze, më e fortë dhe më e gatshme për rritje.",
                   "From branding and content to websites and advertising, EMOR builds a premium digital system that makes your brand feel more serious, more powerful, and more ready to grow."
                 )}
               </p>
 
-              <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+              <div className="mt-6 flex flex-col gap-2.5 sm:flex-row">
                 <Link to="/contact" className="btn-primary">
                   {t("Fillo projektin", "Start your project")}{" "}
                   <ArrowRight size={18} />
@@ -268,20 +268,20 @@ const Index = () => {
                 </Link>
               </div>
 
-              <div className="mt-7 grid gap-3 sm:grid-cols-3">
+              <div className="mt-6 grid gap-3 sm:grid-cols-3">
                 {heroSignals.map((signal) => (
                   <div
                     key={signal.labelEn}
-                    className="rounded-[1.2rem] border border-white/10 bg-white/[0.03] px-4 py-3.5 backdrop-blur-md shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]"
+                    className="rounded-[1.05rem] border border-white/10 bg-white/[0.03] px-3.5 py-3 backdrop-blur-md shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]"
                   >
-                    <p className="text-[0.72rem] uppercase tracking-[0.24em] text-primary/90">
+                    <p className="text-[0.68rem] uppercase tracking-[0.22em] text-primary/90">
                       {t(signal.labelAl, signal.labelEn)}
                     </p>
                     <AnimatedCounter
                       value={signal.value}
                       prefix={signal.prefix}
                       suffix={signal.suffix}
-                      className="mt-2.5 block text-[2rem] font-extrabold tracking-[-0.05em] text-white md:text-[2.1rem]"
+                      className="mt-2 block text-[1.7rem] font-extrabold tracking-[-0.05em] text-white md:text-[1.85rem]"
                     />
                   </div>
                 ))}
@@ -296,10 +296,10 @@ const Index = () => {
             >
               <PremiumCard
                 interactive={false}
-                className="overflow-hidden px-6 py-6 md:px-8 md:py-8"
+                className="overflow-hidden px-5 py-5 md:px-6 md:py-6"
               >
                 <div className="panel-grid absolute inset-0 opacity-[0.16]" />
-                <div className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-primary/75 to-transparent" />
+                <div className="absolute inset-x-5 top-0 h-px bg-gradient-to-r from-transparent via-primary/75 to-transparent" />
 
                 <div className="relative">
                   <div className="flex items-start justify-between gap-4">
@@ -308,18 +308,18 @@ const Index = () => {
                         <span className="h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_14px_rgba(212,177,61,0.8)]" />
                         {t("Campaign Pulse", "Campaign Pulse")}
                       </span>
-                      <h2 className="mt-5 text-[1.9rem] font-bold tracking-[-0.045em] text-white md:text-[2.3rem]">
+                      <h2 className="mt-4 text-[1.65rem] font-bold tracking-[-0.045em] text-white md:text-[1.95rem]">
                         {t("Command View", "Command View")}
                       </h2>
                     </div>
 
-                    <div className="rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-primary">
+                    <div className="rounded-full border border-primary/20 bg-primary/10 px-2.5 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-primary">
                       {t("Live", "Live")}
                     </div>
                   </div>
 
-                  <div className="mt-8 grid gap-4 md:grid-cols-[1.05fr_0.95fr]">
-                    <div className="rounded-[1.4rem] border border-white/10 bg-white/[0.03] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]">
+                  <div className="mt-6 grid gap-3 md:grid-cols-[1.05fr_0.95fr]">
+                    <div className="rounded-[1.2rem] border border-white/10 bg-white/[0.03] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]">
                       <p className="text-xs uppercase tracking-[0.26em] text-primary/90">
                         {t("Rritje e sinjalit", "Signal growth")}
                       </p>
@@ -327,9 +327,9 @@ const Index = () => {
                         value={142}
                         prefix="+"
                         suffix="%"
-                        className="mt-4 block text-[2.95rem] font-extrabold tracking-[-0.07em] gold-gradient-text md:text-[3.35rem]"
+                        className="mt-3 block text-[2.45rem] font-extrabold tracking-[-0.07em] gold-gradient-text md:text-[2.75rem]"
                       />
-                      <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
+                      <p className="mt-3 max-w-sm text-[0.9rem] leading-relaxed text-muted-foreground">
                         {t(
                           "Markat me sistemim më të fortë vizual po marrin më shumë klikime, më shumë kujtesë marke dhe më shumë lead-e me cilësi.",
                           "Brands with stronger visual systems are earning more clicks, stronger recall, and better-quality leads."
@@ -337,14 +337,14 @@ const Index = () => {
                       </p>
                     </div>
 
-                    <div className="rounded-[1.4rem] border border-white/10 bg-background/50 p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]">
+                    <div className="rounded-[1.2rem] border border-white/10 bg-background/50 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]">
                       <p className="text-xs uppercase tracking-[0.26em] text-primary/90">
                         {t("Indikatorët", "Indicators")}
                       </p>
-                      <div className="mt-4 space-y-4">
+                      <div className="mt-3 space-y-3.5">
                         {heroChannels.map((channel) => (
                           <div key={channel.labelEn}>
-                            <div className="mb-2 flex items-center justify-between text-sm">
+                            <div className="mb-2 flex items-center justify-between text-[0.9rem]">
                               <span className="text-white">
                                 {t(channel.labelAl, channel.labelEn)}
                               </span>
@@ -364,28 +364,28 @@ const Index = () => {
                     </div>
                   </div>
 
-                  <div className="mt-6 grid gap-3 sm:grid-cols-3">
-                    <div className="rounded-[1.15rem] border border-white/10 bg-background/55 px-4 py-4">
-                      <p className="text-[0.72rem] uppercase tracking-[0.22em] text-primary/90">
+                  <div className="mt-5 grid gap-3 sm:grid-cols-3">
+                    <div className="rounded-[1rem] border border-white/10 bg-background/55 px-3.5 py-3.5">
+                      <p className="text-[0.68rem] uppercase tracking-[0.2em] text-primary/90">
                         {t("Lead quality", "Lead quality")}
                       </p>
-                      <p className="mt-3 text-xl font-bold tracking-[-0.04em] text-white">
+                      <p className="mt-2.5 text-lg font-bold tracking-[-0.04em] text-white">
                         94/100
                       </p>
                     </div>
-                    <div className="rounded-[1.15rem] border border-white/10 bg-background/55 px-4 py-4">
-                      <p className="text-[0.72rem] uppercase tracking-[0.22em] text-primary/90">
+                    <div className="rounded-[1rem] border border-white/10 bg-background/55 px-3.5 py-3.5">
+                      <p className="text-[0.68rem] uppercase tracking-[0.2em] text-primary/90">
                         {t("Creative fit", "Creative fit")}
                       </p>
-                      <p className="mt-3 text-xl font-bold tracking-[-0.04em] text-white">
+                      <p className="mt-2.5 text-lg font-bold tracking-[-0.04em] text-white">
                         9.1/10
                       </p>
                     </div>
-                    <div className="rounded-[1.15rem] border border-white/10 bg-background/55 px-4 py-4">
-                      <p className="text-[0.72rem] uppercase tracking-[0.22em] text-primary/90">
+                    <div className="rounded-[1rem] border border-white/10 bg-background/55 px-3.5 py-3.5">
+                      <p className="text-[0.68rem] uppercase tracking-[0.2em] text-primary/90">
                         {t("Reply flow", "Reply flow")}
                       </p>
-                      <p className="mt-3 text-xl font-bold tracking-[-0.04em] text-white">
+                      <p className="mt-2.5 text-lg font-bold tracking-[-0.04em] text-white">
                         &lt; 24h
                       </p>
                     </div>
@@ -422,29 +422,29 @@ const Index = () => {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.25 }}
                 variants={fadeUp}
-                className="px-6 py-6 md:px-7 md:py-7"
+                className="px-5 py-5 md:px-6 md:py-6"
               >
                 <div className="flex items-start justify-between gap-4">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-[1.15rem] border border-primary/15 bg-primary/10 text-primary shadow-[0_0_24px_rgba(212,177,61,0.12)]">
-                    <service.icon size={24} />
+                  <div className="flex h-12 w-12 items-center justify-center rounded-[1rem] border border-primary/15 bg-primary/10 text-primary shadow-[0_0_24px_rgba(212,177,61,0.12)]">
+                    <service.icon size={20} />
                   </div>
-                  <span className="rounded-full border border-primary/15 bg-primary/10 px-3 py-1 text-[0.7rem] font-semibold uppercase tracking-[0.24em] text-primary">
+                  <span className="rounded-full border border-primary/15 bg-primary/10 px-2.5 py-1 text-[0.66rem] font-semibold uppercase tracking-[0.2em] text-primary">
                     {service.value}
                   </span>
                 </div>
 
-                <h3 className="mt-6 text-xl font-bold tracking-[-0.04em] text-white">
+                <h3 className="mt-5 text-lg font-bold tracking-[-0.04em] text-white md:text-[1.18rem]">
                   {t(service.titleAl, service.titleEn)}
                 </h3>
-                <p className="mt-4 text-sm leading-relaxed text-muted-foreground md:text-[0.96rem]">
+                <p className="mt-3 text-[0.92rem] leading-relaxed text-muted-foreground md:text-[0.95rem]">
                   {t(service.descAl, service.descEn)}
                 </p>
 
-                <div className="mt-6 rounded-[1.15rem] border border-white/8 bg-background/45 px-4 py-4">
-                  <p className="text-[0.72rem] uppercase tracking-[0.24em] text-primary/90">
+                <div className="mt-5 rounded-[1rem] border border-white/8 bg-background/45 px-3.5 py-3.5">
+                  <p className="text-[0.68rem] uppercase tracking-[0.2em] text-primary/90">
                     {t(service.metricAl, service.metricEn)}
                   </p>
-                  <p className="mt-2 text-sm font-medium text-white">
+                  <p className="mt-2 text-[0.92rem] font-medium text-white">
                     {service.value}
                   </p>
                 </div>
@@ -480,17 +480,17 @@ const Index = () => {
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.25 }}
                     variants={fadeUp}
-                    className="px-5 py-5"
+                    className="px-4 py-4"
                   >
                     <div className="flex items-start gap-4">
-                      <div className="mt-1 flex h-11 w-11 shrink-0 items-center justify-center rounded-[1rem] border border-primary/15 bg-primary/10 text-primary">
-                        <item.icon size={20} />
+                      <div className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-[0.95rem] border border-primary/15 bg-primary/10 text-primary">
+                        <item.icon size={18} />
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold tracking-[-0.03em] text-white">
+                        <h3 className="text-[1rem] font-semibold tracking-[-0.03em] text-white md:text-[1.05rem]">
                           {t(item.titleAl, item.titleEn)}
                         </h3>
-                        <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                        <p className="mt-2.5 text-[0.9rem] leading-relaxed text-muted-foreground">
                           {t(item.descAl, item.descEn)}
                         </p>
                       </div>
@@ -535,16 +535,16 @@ const Index = () => {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.25 }}
                 variants={fadeUp}
-                className="flex h-full flex-col gap-5 px-6 py-6 md:px-7"
+                className="flex h-full flex-col gap-4 px-5 py-5 md:px-6 md:py-6"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-[1rem] border border-primary/15 bg-primary/10 text-primary">
-                  <item.icon size={20} />
+                <div className="flex h-11 w-11 items-center justify-center rounded-[0.95rem] border border-primary/15 bg-primary/10 text-primary">
+                  <item.icon size={18} />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold tracking-[-0.03em] text-white">
+                  <h3 className="text-[1.05rem] font-semibold tracking-[-0.03em] text-white md:text-[1.12rem]">
                     {t(item.titleAl, item.titleEn)}
                   </h3>
-                  <p className="mt-4 text-sm leading-relaxed text-muted-foreground md:text-[0.96rem]">
+                  <p className="mt-3 text-[0.92rem] leading-relaxed text-muted-foreground md:text-[0.95rem]">
                     {t(item.descAl, item.descEn)}
                   </p>
                 </div>
@@ -577,21 +577,21 @@ const Index = () => {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.25 }}
                 variants={fadeUp}
-                className="h-full px-6 py-6 md:px-7"
+                className="h-full px-5 py-5 md:px-6 md:py-6"
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-4xl font-extrabold tracking-[-0.06em] gold-gradient-text">
+                  <span className="text-[2rem] font-extrabold tracking-[-0.06em] gold-gradient-text md:text-[2.2rem]">
                     {step.step}
                   </span>
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full border border-primary/15 bg-primary/10 text-primary">
-                    <step.icon size={18} />
+                  <div className="flex h-11 w-11 items-center justify-center rounded-full border border-primary/15 bg-primary/10 text-primary">
+                    <step.icon size={17} />
                   </div>
                 </div>
 
-                <h3 className="mt-8 text-xl font-semibold tracking-[-0.03em] text-white">
+                <h3 className="mt-6 text-[1.05rem] font-semibold tracking-[-0.03em] text-white md:text-[1.12rem]">
                   {t(step.titleAl, step.titleEn)}
                 </h3>
-                <p className="mt-4 text-sm leading-relaxed text-muted-foreground md:text-[0.96rem]">
+                <p className="mt-3 text-[0.92rem] leading-relaxed text-muted-foreground md:text-[0.95rem]">
                   {t(step.descAl, step.descEn)}
                 </p>
               </PremiumCard>
@@ -608,30 +608,30 @@ const Index = () => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.25 }}
               variants={softReveal}
-              className="px-6 py-6 md:px-8 md:py-8"
+              className="px-5 py-5 md:px-6 md:py-6"
             >
               <span className="premium-badge">
                 <Gem size={12} />
                 {t("Premium systems", "Premium systems")}
               </span>
-              <h3 className="mt-6 max-w-xl text-[2rem] font-bold tracking-[-0.045em] text-white md:text-[2.35rem]">
+              <h3 className="mt-5 max-w-xl text-[1.75rem] font-bold tracking-[-0.045em] text-white md:text-[2.05rem]">
                 {t(
                   "Përtej postimeve: sisteme që forcojnë imazhin dhe performancën e markës suaj.",
                   "Beyond posting: systems that strengthen your brand image and performance."
                 )}
               </h3>
-              <p className="mt-5 max-w-xl text-sm leading-relaxed text-muted-foreground md:text-base">
+              <p className="mt-4 max-w-xl text-[0.94rem] leading-relaxed text-muted-foreground md:text-[0.98rem]">
                 {t(
                   "EMOR është më i fortë kur çdo pjesë e prezencës suaj digjitale është duke punuar së bashku. Këto janë shtesat që i japin faqes dhe shërbimit tuaj një ndjesi më të rafinuar dhe më profesionale.",
                   "EMOR is strongest when every piece of your digital presence works together. These are the added layers that make your site and service feel more refined and more professional."
                 )}
               </p>
 
-              <div className="mt-8 flex flex-wrap gap-3">
+              <div className="mt-6 flex flex-wrap gap-2.5">
                 {premiumSystems.map((item) => (
                   <span
                     key={item}
-                    className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm text-foreground/90"
+                    className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-1.5 text-[0.9rem] text-foreground/90"
                   >
                     <MessagesSquare size={14} className="text-primary" />
                     {item}
@@ -645,45 +645,45 @@ const Index = () => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.25 }}
               variants={softReveal}
-              className="px-6 py-6 md:px-8 md:py-8"
+              className="px-5 py-5 md:px-6 md:py-6"
             >
               <span className="premium-badge">
                 <Clock3 size={12} />
                 {t("Ready to move", "Ready to move")}
               </span>
-              <h3 className="mt-6 max-w-xl text-[2rem] font-bold tracking-[-0.045em] text-white md:text-[2.35rem]">
+              <h3 className="mt-5 max-w-xl text-[1.75rem] font-bold tracking-[-0.045em] text-white md:text-[2.05rem]">
                 {t(
                   "A jeni gati ta ktheni praninë tuaj online në avantazh real biznesi?",
                   "Ready to turn your online presence into a real business advantage?"
                 )}
               </h3>
-              <p className="mt-5 max-w-xl text-sm leading-relaxed text-muted-foreground md:text-base">
+              <p className="mt-4 max-w-xl text-[0.94rem] leading-relaxed text-muted-foreground md:text-[0.98rem]">
                 {t(
                   "Le ta ndërtojmë një sistem që e bën biznesin tuaj të duket premium, të komunikojë më qartë dhe të konvertojë më mirë në çdo kanal.",
                   "Let's build a system that makes your business feel premium, communicate with more clarity, and convert better across every channel."
                 )}
               </p>
 
-              <div className="mt-8 grid gap-3 sm:grid-cols-2">
-                <div className="rounded-[1.2rem] border border-white/10 bg-background/55 p-4">
-                  <p className="text-[0.72rem] uppercase tracking-[0.24em] text-primary/90">
+              <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                <div className="rounded-[1rem] border border-white/10 bg-background/55 p-3.5">
+                  <p className="text-[0.68rem] uppercase tracking-[0.2em] text-primary/90">
                     {t("Shërbimi", "Service")}
                   </p>
-                  <p className="mt-3 text-lg font-semibold text-white">
+                  <p className="mt-2.5 text-base font-semibold text-white">
                     {t("Paketa të personalizuara", "Tailored packages")}
                   </p>
                 </div>
-                <div className="rounded-[1.2rem] border border-white/10 bg-background/55 p-4">
-                  <p className="text-[0.72rem] uppercase tracking-[0.24em] text-primary/90">
+                <div className="rounded-[1rem] border border-white/10 bg-background/55 p-3.5">
+                  <p className="text-[0.68rem] uppercase tracking-[0.2em] text-primary/90">
                     {t("Përgjigje", "Reply")}
                   </p>
-                  <p className="mt-3 text-lg font-semibold text-white">
+                  <p className="mt-2.5 text-base font-semibold text-white">
                     {t("Brenda 24 orëve", "Within 24 hours")}
                   </p>
                 </div>
               </div>
 
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <div className="mt-6 flex flex-col gap-2.5 sm:flex-row">
                 <Link to="/contact" className="btn-primary">
                   {t("Rezervo një bisedë", "Book a conversation")}{" "}
                   <ArrowRight size={18} />
