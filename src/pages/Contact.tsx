@@ -67,7 +67,7 @@ const Contact = () => {
                   <span className="h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_14px_rgba(212,177,61,0.8)]" />
                   {t("Project intake", "Project intake")}
                 </span>
-                <h2 className="mt-6 text-3xl font-bold tracking-[-0.05em] text-white">
+                <h2 className="mt-6 text-[2rem] font-bold tracking-[-0.045em] text-white md:text-[2.2rem]">
                   {t("Na tregoni çfarë po ndërtoni.", "Tell us what you are building.")}
                 </h2>
 
