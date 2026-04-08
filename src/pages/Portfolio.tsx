@@ -1,115 +1,144 @@
-import { useLanguage } from "@/contexts/LanguageContext";
-import SectionHeading from "@/components/SectionHeading";
 import { motion } from "framer-motion";
-import { ExternalLink } from "lucide-react";
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.1, duration: 0.5 },
-  }),
-};
+import { ArrowUpRight, BarChart3, Globe, Megaphone, Sparkles } from "lucide-react";
+import PageHero from "@/components/PageHero";
+import PremiumCard from "@/components/PremiumCard";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { fadeUp } from "@/lib/motion";
 
 const Portfolio = () => {
   const { t } = useLanguage();
 
   const projects = [
     {
-      titleAl: "Markë Restoranti — Identitet i Plotë",
-      titleEn: "Restaurant Brand — Full Identity",
-      descAl: "Ridizajnim i plotë i identitetit vizual, menusë dhe pranisë në rrjete sociale.",
-      descEn: "Complete redesign of visual identity, menu, and social media presence.",
-      category: t("Branding", "Branding"),
-      color: "from-primary/20 to-primary/5",
+      categoryAl: "Branding",
+      categoryEn: "Branding",
+      titleAl: "Restorant premium me identitet të ri vizual",
+      titleEn: "Premium restaurant with a refreshed visual identity",
+      descAl:
+        "Rikonceptim i plotë i markës me tone më elegante, menu të strukturuar dhe vizuale sociale që e ngritën perceptimin e biznesit.",
+      descEn:
+        "A full brand refresh with more elegant tones, structured menu design, and social visuals that elevated business perception.",
+      resultAl: "Rezultat",
+      resultEn: "Result",
+      resultValue: "+41% reach",
+      icon: Sparkles,
     },
     {
-      titleAl: "E-Commerce — Uebsajt Premium",
-      titleEn: "E-Commerce — Premium Website",
-      descAl: "Dyqan online modern me dizajn luksoz dhe performancë të lartë.",
-      descEn: "Modern online store with luxury design and high performance.",
-      category: t("Uebsajt", "Website"),
-      color: "from-blue-500/20 to-blue-500/5",
+      categoryAl: "Website",
+      categoryEn: "Website",
+      titleAl: "Website premium për e-commerce",
+      titleEn: "Premium website for e-commerce",
+      descAl:
+        "Ndërtim i faqes me fokus në besim, shpejtësi dhe strukturë blerjeje më të pastër për përdoruesin.",
+      descEn:
+        "A website built with focus on trust, speed, and a cleaner purchase journey for the user.",
+      resultAl: "Rezultat",
+      resultEn: "Result",
+      resultValue: "Higher conversion flow",
+      icon: Globe,
     },
     {
-      titleAl: "Startup Teknologjik — Fushata Digjitale",
-      titleEn: "Tech Startup — Digital Campaign",
-      descAl: "Strategji e integruar marketingu me reklama dhe përmbajtje sociale.",
-      descEn: "Integrated marketing strategy with ads and social content.",
-      category: t("Marketing", "Marketing"),
-      color: "from-emerald-500/20 to-emerald-500/5",
+      categoryAl: "Campaign",
+      categoryEn: "Campaign",
+      titleAl: "Fushatë digjitale për startup teknologjik",
+      titleEn: "Digital campaign for a tech startup",
+      descAl:
+        "Mesazh më i qartë, creative më i fortë dhe optimizim i vazhdueshëm për të kthyer interesin në lead-e.",
+      descEn:
+        "Clearer messaging, stronger creative, and ongoing optimization to turn attention into leads.",
+      resultAl: "Rezultat",
+      resultEn: "Result",
+      resultValue: "+186% lead signal",
+      icon: Megaphone,
     },
     {
-      titleAl: "Klinikë Dentare — Rrjete Sociale",
-      titleEn: "Dental Clinic — Social Media",
-      descAl: "Menaxhim i plotë i rrjeteve sociale me përmbajtje edukative dhe promovuese.",
-      descEn: "Full social media management with educational and promotional content.",
-      category: t("Sociale", "Social"),
-      color: "from-purple-500/20 to-purple-500/5",
-    },
-    {
-      titleAl: "Zyrë Ligjore — Uebsajt Korporativ",
-      titleEn: "Law Firm — Corporate Website",
-      descAl: "Uebsajt profesional me strukturë të qartë dhe imazh besueshmërie.",
-      descEn: "Professional website with clear structure and trustworthy image.",
-      category: t("Uebsajt", "Website"),
-      color: "from-amber-500/20 to-amber-500/5",
-    },
-    {
-      titleAl: "Brand Fitness — Chatbot AI",
-      titleEn: "Fitness Brand — AI Chatbot",
-      descAl: "Chatbot inteligjent për rezervime, pyetje dhe kualifikim të klientëve.",
-      descEn: "Intelligent chatbot for bookings, inquiries, and client qualification.",
-      category: "AI",
-      color: "from-cyan-500/20 to-cyan-500/5",
+      categoryAl: "Social",
+      categoryEn: "Social",
+      titleAl: "Prani sociale për klinikë dentare",
+      titleEn: "Social presence for a dental clinic",
+      descAl:
+        "Sistem postimesh edukative dhe promovuese që e rriti besueshmërinë dhe e bëri klinikën të dukej më moderne.",
+      descEn:
+        "A content system of educational and promotional posts that increased credibility and made the clinic feel more modern.",
+      resultAl: "Rezultat",
+      resultEn: "Result",
+      resultValue: "Stronger trust perception",
+      icon: BarChart3,
     },
   ];
 
   return (
-    <main className="pt-24">
-      <section className="section-padding">
-        <div className="container mx-auto px-4 lg:px-8">
-          <SectionHeading
-            label={t("Portofoli", "Portfolio")}
-            title={t("Punët Tona", "Our Work")}
-            subtitle={t(
-              "Shembuj realë nga projektet tona premium.",
-              "Real examples from our premium projects."
-            )}
-          />
+    <main className="pb-24">
+      <PageHero
+        label={t("Punët tona", "Our work")}
+        title={t(
+          "Shembuj të projekteve ku branding-u, struktura dhe prezantimi punuan së bashku.",
+          "Examples of projects where branding, structure, and presentation worked together."
+        )}
+        subtitle={t(
+          "Këto nuk janë vetëm visuale të bukura. Janë shembuj se si një markë mund të ndihet më e fortë kur sistemi i saj digjital është i kuruar mirë.",
+          "These are not just pretty visuals. They are examples of how a brand can feel stronger when its digital system is carefully curated."
+        )}
+        stats={[
+          {
+            label: t("Lloje projektesh", "Project types"),
+            value: t("Brand, web, ads", "Brand, web, ads"),
+          },
+          {
+            label: t("Qasje", "Approach"),
+            value: t("Case-led", "Case-led"),
+          },
+          {
+            label: t("Ndjesi", "Feel"),
+            value: t("Premium", "Premium"),
+          },
+        ]}
+      />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projects.map((p, i) => (
-              <motion.div
-                key={i}
-                custom={i}
+      <section className="section-padding pt-10">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="grid gap-6 md:grid-cols-2">
+            {projects.map((project, index) => (
+              <PremiumCard
+                key={project.titleEn}
+                custom={index}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.2 }}
                 variants={fadeUp}
-                className="group rounded-2xl overflow-hidden card-glass gold-border-hover"
+                className="px-6 py-6 md:px-8 md:py-8"
               >
-                <div
-                  className={`h-48 bg-gradient-to-br ${p.color} flex items-center justify-center`}
-                >
-                  <span className="text-xs font-semibold uppercase tracking-wider text-primary bg-primary/10 px-3 py-1.5 rounded-full">
-                    {p.category}
+                <div className="flex items-start justify-between gap-4">
+                  <span className="premium-badge">
+                    <project.icon size={12} />
+                    {t(project.categoryAl, project.categoryEn)}
+                  </span>
+                  <span className="inline-flex items-center gap-1 text-sm font-medium text-primary">
+                    <ArrowUpRight size={16} />
+                    {t("Case snapshot", "Case snapshot")}
                   </span>
                 </div>
-                <div className="p-6">
-                  <h3 className="font-semibold text-lg mb-2 group-hover:text-primary transition-colors">
-                    {t(p.titleAl, p.titleEn)}
-                  </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    {t(p.descAl, p.descEn)}
-                  </p>
-                  <div className="mt-4 flex items-center gap-1.5 text-primary text-sm font-medium">
-                    <ExternalLink size={14} />
-                    {t("Shiko Detajet", "View Details")}
-                  </div>
+
+                <div className="mt-8 rounded-[1.4rem] border border-primary/12 bg-[radial-gradient(circle_at_top_right,rgba(212,177,61,0.12),transparent_26%),linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01))] p-6">
+                  <div className="panel-grid h-44 rounded-[1rem] border border-white/10 bg-background/55" />
                 </div>
-              </motion.div>
+
+                <h2 className="mt-8 text-2xl font-bold tracking-[-0.04em] text-white">
+                  {t(project.titleAl, project.titleEn)}
+                </h2>
+                <p className="mt-4 text-sm leading-relaxed text-muted-foreground md:text-base">
+                  {t(project.descAl, project.descEn)}
+                </p>
+
+                <div className="mt-6 rounded-[1.2rem] border border-white/10 bg-white/[0.03] p-4">
+                  <p className="text-[0.72rem] uppercase tracking-[0.24em] text-primary/90">
+                    {t(project.resultAl, project.resultEn)}
+                  </p>
+                  <p className="mt-3 text-lg font-semibold text-white">
+                    {project.resultValue}
+                  </p>
+                </div>
+              </PremiumCard>
             ))}
           </div>
         </div>
