@@ -20,7 +20,7 @@ const Footer = () => {
                 <Sparkles size={12} />
                 {t("EMOR Marketing", "EMOR Marketing")}
               </span>
-              <h2 className="mt-6 max-w-2xl text-3xl font-bold tracking-[-0.05em] text-white md:text-4xl">
+              <h2 className="mt-6 max-w-2xl text-[2rem] font-bold tracking-[-0.045em] text-white md:text-[2.45rem]">
                 {t(
                   "Një prezencë më premium fillon me strukturë më të fortë.",
                   "A more premium presence starts with stronger structure."

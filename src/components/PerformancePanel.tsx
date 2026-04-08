@@ -57,7 +57,7 @@ const PerformancePanel = () => {
             <span className="h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_14px_rgba(212,177,61,0.8)]" />
             {t("Panel Strategjik", "Strategic Panel")}
           </span>
-          <h3 className="mt-5 text-2xl font-bold tracking-[-0.04em] text-white md:text-[2rem]">
+          <h3 className="mt-5 text-[1.8rem] font-bold tracking-[-0.04em] text-white md:text-[2.1rem]">
             {t("EMOR Growth Deck", "EMOR Growth Deck")}
           </h3>
           <p className="mt-3 max-w-md text-sm leading-relaxed text-muted-foreground md:text-base">
@@ -87,7 +87,7 @@ const PerformancePanel = () => {
               value={186}
               prefix="+"
               suffix="%"
-              className="text-5xl font-extrabold tracking-[-0.06em] gold-gradient-text"
+              className="text-[2.9rem] font-extrabold tracking-[-0.06em] gold-gradient-text md:text-[3.25rem]"
             />
             <span className="mb-2 inline-flex items-center gap-1 rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-primary">
               <ArrowUpRight size={12} />

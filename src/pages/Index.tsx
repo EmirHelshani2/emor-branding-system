@@ -228,11 +228,11 @@ const Index = () => {
 
   return (
     <main className="overflow-hidden">
-      <section className="section-shell relative flex min-h-screen items-center overflow-hidden pt-28 md:pt-32">
+      <section className="section-shell relative flex min-h-[calc(100svh-5.25rem)] items-center overflow-hidden pt-8 md:min-h-[calc(100svh-6rem)] md:pt-12">
         <HeroVideoBackground />
 
         <div className="container relative z-10 mx-auto px-4 lg:px-8">
-          <div className="grid gap-10 py-16 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:py-20">
+          <div className="grid gap-8 py-10 md:py-12 lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:py-16">
             <motion.div
               initial="hidden"
               animate="visible"
@@ -244,21 +244,21 @@ const Index = () => {
                 {t("EMOR Premium Growth Systems", "EMOR Premium Growth Systems")}
               </span>
 
-              <h1 className="mt-6 max-w-4xl text-4xl font-extrabold leading-[1.02] tracking-[-0.06em] text-balance text-white md:text-6xl lg:text-[5.2rem]">
+              <h1 className="mt-5 max-w-4xl text-[2.5rem] font-extrabold leading-[1.05] tracking-[-0.05em] text-balance text-white sm:text-[3rem] md:text-[3.65rem] lg:text-[4rem] xl:text-[4.35rem]">
                 {t(
                   "I japim biznesit tuaj praninë që duket elitare, bind me qartësi dhe konverton me strategji.",
                   "We give your business a presence that looks elite, persuades with clarity, and converts with strategy."
                 )}
               </h1>
 
-              <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
+              <p className="mt-5 max-w-2xl text-[1rem] leading-relaxed text-muted-foreground md:text-[1.08rem] lg:text-[1.12rem]">
                 {t(
                   "Nga branding-u dhe përmbajtja deri te websites dhe reklamat, EMOR ndërton një sistem digjital premium që e bën markën tuaj të ndihet më serioze, më e fortë dhe më e gatshme për rritje.",
                   "From branding and content to websites and advertising, EMOR builds a premium digital system that makes your brand feel more serious, more powerful, and more ready to grow."
                 )}
               </p>
 
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <div className="mt-7 flex flex-col gap-3 sm:flex-row">
                 <Link to="/contact" className="btn-primary">
                   {t("Fillo projektin", "Start your project")}{" "}
                   <ArrowRight size={18} />
@@ -268,11 +268,11 @@ const Index = () => {
                 </Link>
               </div>
 
-              <div className="mt-8 grid gap-3 sm:grid-cols-3">
+              <div className="mt-7 grid gap-3 sm:grid-cols-3">
                 {heroSignals.map((signal) => (
                   <div
                     key={signal.labelEn}
-                    className="rounded-[1.25rem] border border-white/10 bg-white/[0.03] px-4 py-4 backdrop-blur-md shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]"
+                    className="rounded-[1.2rem] border border-white/10 bg-white/[0.03] px-4 py-3.5 backdrop-blur-md shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]"
                   >
                     <p className="text-[0.72rem] uppercase tracking-[0.24em] text-primary/90">
                       {t(signal.labelAl, signal.labelEn)}
@@ -281,7 +281,7 @@ const Index = () => {
                       value={signal.value}
                       prefix={signal.prefix}
                       suffix={signal.suffix}
-                      className="mt-3 block text-3xl font-extrabold tracking-[-0.05em] text-white"
+                      className="mt-2.5 block text-[2rem] font-extrabold tracking-[-0.05em] text-white md:text-[2.1rem]"
                     />
                   </div>
                 ))}
@@ -308,7 +308,7 @@ const Index = () => {
                         <span className="h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_14px_rgba(212,177,61,0.8)]" />
                         {t("Campaign Pulse", "Campaign Pulse")}
                       </span>
-                      <h2 className="mt-5 text-3xl font-bold tracking-[-0.05em] text-white md:text-4xl">
+                      <h2 className="mt-5 text-[1.9rem] font-bold tracking-[-0.045em] text-white md:text-[2.3rem]">
                         {t("Command View", "Command View")}
                       </h2>
                     </div>
@@ -327,7 +327,7 @@ const Index = () => {
                         value={142}
                         prefix="+"
                         suffix="%"
-                        className="mt-4 block text-5xl font-extrabold tracking-[-0.07em] gold-gradient-text"
+                        className="mt-4 block text-[2.95rem] font-extrabold tracking-[-0.07em] gold-gradient-text md:text-[3.35rem]"
                       />
                       <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
                         {t(
@@ -614,7 +614,7 @@ const Index = () => {
                 <Gem size={12} />
                 {t("Premium systems", "Premium systems")}
               </span>
-              <h3 className="mt-6 max-w-xl text-3xl font-bold tracking-[-0.05em] text-white">
+              <h3 className="mt-6 max-w-xl text-[2rem] font-bold tracking-[-0.045em] text-white md:text-[2.35rem]">
                 {t(
                   "Përtej postimeve: sisteme që forcojnë imazhin dhe performancën e markës suaj.",
                   "Beyond posting: systems that strengthen your brand image and performance."
@@ -651,7 +651,7 @@ const Index = () => {
                 <Clock3 size={12} />
                 {t("Ready to move", "Ready to move")}
               </span>
-              <h3 className="mt-6 max-w-xl text-3xl font-bold tracking-[-0.05em] text-white">
+              <h3 className="mt-6 max-w-xl text-[2rem] font-bold tracking-[-0.045em] text-white md:text-[2.35rem]">
                 {t(
                   "A jeni gati ta ktheni praninë tuaj online në avantazh real biznesi?",
                   "Ready to turn your online presence into a real business advantage?"
