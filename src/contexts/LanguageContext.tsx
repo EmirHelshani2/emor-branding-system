@@ -1,4 +1,10 @@
-import React, { createContext, useContext, useState, useCallback } from "react";
+import React, {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 
 type Language = "al" | "en";
 
@@ -11,11 +17,22 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [lang, setLang] = useState<Language>("al");
+  const [lang, setLang] = useState<Language>(() => {
+    if (typeof window === "undefined") {
+      return "al";
+    }
+
+    const storedLanguage = window.localStorage.getItem("emor-language");
+    return storedLanguage === "en" ? "en" : "al";
+  });
 
   const toggle = useCallback(() => {
     setLang((prev) => (prev === "al" ? "en" : "al"));
   }, []);
+
+  useEffect(() => {
+    window.localStorage.setItem("emor-language", lang);
+  }, [lang]);
 
   const t = useCallback(
     (al: string, en: string) => (lang === "al" ? al : en),
