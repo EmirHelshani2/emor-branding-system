@@ -187,7 +187,7 @@ const Pricing = () => {
                 <span className="h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_14px_rgba(212,177,61,0.8)]" />
                 {t("Opsion i personalizuar", "Custom option")}
               </span>
-              <h3 className="mt-6 text-3xl font-bold tracking-[-0.05em] text-white">
+              <h3 className="mt-6 text-[2rem] font-bold tracking-[-0.045em] text-white md:text-[2.3rem]">
                 {t("Keni nevojë për diçka të personalizuar?", "Need something custom?")}
               </h3>
               <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">

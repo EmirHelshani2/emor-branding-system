@@ -103,7 +103,7 @@ const About = () => {
                     <span className="h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_14px_rgba(212,177,61,0.8)]" />
                     {t("Çfarë ndërtojmë", "What we build")}
                   </span>
-                  <h2 className="mt-6 text-3xl font-bold tracking-[-0.05em] text-white md:text-4xl">
+                  <h2 className="mt-6 text-[2rem] font-bold tracking-[-0.045em] text-white md:text-[2.35rem]">
                     {t(
                       "Një sistem të plotë prezence për markat që duan të duken më serioze online.",
                       "A complete presence system for brands that want to look more serious online."
@@ -222,7 +222,7 @@ const About = () => {
                     .map((part) => part[0])
                     .join("")}
                 </div>
-                <h3 className="mt-6 text-2xl font-bold tracking-[-0.04em] text-white">
+                <h3 className="mt-6 text-[1.8rem] font-bold tracking-[-0.04em] text-white">
                   {founder.name}
                 </h3>
                 <p className="mt-2 text-sm font-medium uppercase tracking-[0.2em] text-primary/90">

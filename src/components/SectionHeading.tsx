@@ -11,7 +11,7 @@ const SectionHeading = ({
   subtitle,
   center = true,
 }: SectionHeadingProps) => (
-  <div className={`mb-14 md:mb-16 ${center ? "text-center" : "text-left"}`}>
+  <div className={`mb-12 md:mb-14 ${center ? "text-center" : "text-left"}`}>
     {label && (
       <span className={`premium-badge ${center ? "" : "justify-start"}`}>
         <span className="h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_14px_rgba(212,177,61,0.8)]" />
@@ -19,7 +19,7 @@ const SectionHeading = ({
       </span>
     )}
     <h2
-      className={`mt-5 text-3xl font-bold leading-tight tracking-[-0.05em] text-balance text-white md:text-4xl lg:text-5xl ${
+      className={`mt-5 text-[2rem] font-bold leading-[1.08] tracking-[-0.045em] text-balance text-white md:text-[2.35rem] lg:text-[2.9rem] ${
         center ? "mx-auto max-w-4xl" : "max-w-3xl"
       }`}
     >
@@ -32,7 +32,7 @@ const SectionHeading = ({
     />
     {subtitle && (
       <p
-        className={`mt-6 text-base leading-relaxed text-muted-foreground md:text-lg ${
+        className={`mt-5 text-[0.98rem] leading-relaxed text-muted-foreground md:text-[1.04rem] ${
           center ? "mx-auto max-w-2xl" : "max-w-2xl"
         }`}
       >
