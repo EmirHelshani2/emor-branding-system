@@ -18,38 +18,38 @@ const PageHero = ({ label, title, subtitle, stats = [] }: PageHeroProps) => (
     <div className="container mx-auto px-4 lg:px-8">
       <PremiumCard
         interactive={false}
-        className="overflow-hidden px-5 py-6 md:px-7 md:py-8 lg:px-8 lg:py-8"
+        className="overflow-hidden px-5 py-5 md:px-7 md:py-6 lg:px-8 lg:py-7"
       >
-        <div className="panel-grid absolute inset-0 opacity-[0.18]" />
-        <div className="relative grid gap-5 lg:grid-cols-[1.15fr_0.85fr] lg:items-end lg:gap-7">
-          <div className="max-w-[48rem]">
+        <div className="panel-grid absolute inset-0 opacity-[0.15]" />
+        <div className="relative grid gap-5 lg:grid-cols-[1.2fr_0.8fr] lg:items-end lg:gap-6">
+          <div>
             <span className="premium-badge">
-              <span className="h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_16px_rgba(212,177,61,0.85)]" />
+              <span className="h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_14px_rgba(212,177,61,0.85)]" />
               {label}
             </span>
-            <h1 className="mt-4 max-w-3xl text-[2.05rem] font-extrabold tracking-[-0.045em] text-balance text-white sm:text-[2.4rem] md:text-[2.8rem] lg:text-[3.05rem] lg:leading-[1.06]">
+            <h1 className="mt-3 max-w-2xl text-[1.75rem] font-extrabold tracking-[-0.04em] text-balance text-white sm:text-[2rem] md:text-[2.35rem] lg:text-[2.6rem] lg:leading-[1.08]">
               {title}
             </h1>
-            <p className="mt-4 max-w-2xl text-[0.94rem] leading-relaxed text-muted-foreground md:text-[1rem]">
+            <p className="mt-3 max-w-xl text-[0.88rem] leading-relaxed text-muted-foreground md:text-[0.92rem]">
               {subtitle}
             </p>
           </div>
 
           {stats.length > 0 && (
-            <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
+            <div className="grid gap-2.5 grid-cols-3 lg:grid-cols-1">
               {stats.map((stat) => (
                 <div
                   key={stat.label}
-                  className="rounded-[1.1rem] border border-white/10 bg-white/[0.03] px-3.5 py-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]"
+                  className="rounded-[0.95rem] border border-white/10 bg-white/[0.03] px-3 py-2.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]"
                 >
-                  <p className="text-[0.68rem] uppercase tracking-[0.24em] text-primary/90">
+                  <p className="text-[0.62rem] uppercase tracking-[0.2em] text-primary/90">
                     {stat.label}
                   </p>
-                  <p className="mt-2 text-[1.2rem] font-bold tracking-[-0.04em] text-white md:text-[1.3rem]">
+                  <p className="mt-1.5 text-[1.05rem] font-bold tracking-[-0.03em] text-white">
                     {stat.value}
                   </p>
                   {stat.detail && (
-                    <p className="mt-1 text-[0.84rem] text-muted-foreground">{stat.detail}</p>
+                    <p className="mt-0.5 text-[0.8rem] text-muted-foreground">{stat.detail}</p>
                   )}
                 </div>
               ))}

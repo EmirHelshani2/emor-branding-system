@@ -103,16 +103,16 @@ const About = () => {
                     <span className="h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_14px_rgba(212,177,61,0.8)]" />
                     {t("Çfarë ndërtojmë", "What we build")}
                   </span>
-                  <h2 className="mt-5 text-[1.75rem] font-bold tracking-[-0.045em] text-white md:text-[2.05rem]">
+                  <h2 className="mt-4 text-[1.4rem] font-bold tracking-[-0.035em] text-white md:text-[1.6rem]">
                     {t(
-                      "Një sistem i plotë prezence për markat që duan të duken më serioze online.",
-                      "A complete presence system for brands that want to look more serious online."
+                      "Social media, website dhe AI chatbot — ndërtuar për biznese serioze.",
+                      "Social media, websites, and AI chatbots — built for serious businesses."
                     )}
                   </h2>
-                  <p className="mt-4 max-w-2xl text-[0.94rem] leading-relaxed text-muted-foreground md:text-[0.98rem]">
+                  <p className="mt-3 max-w-xl text-[0.875rem] leading-relaxed text-muted-foreground">
                     {t(
-                      "EMOR ndihmon bizneset në Kosovë dhe më gjerë të duken më të kuruara, të komunikojnë më qartë dhe të konvertojnë më mirë. Ne ndërtojmë prezencë që ndihet premium jo vetëm në pamje, por edhe në mënyrën si organizohet dhe si performon.",
-                      "EMOR helps businesses in Kosovo and beyond look more curated, communicate with more clarity, and convert better. We build presence that feels premium not just in appearance, but in the way it is organized and how it performs."
+                      "EMOR ndihmon bizneset në Kosovë dhe rajon të duken profesionale online, të komunikojnë me qartësi dhe të arrijnë më shumë klientë.",
+                      "EMOR helps businesses in Kosovo and the region look professional online, communicate clearly, and reach more customers."
                     )}
                   </p>
                 </div>
@@ -222,13 +222,13 @@ const About = () => {
                     .map((part) => part[0])
                     .join("")}
                 </div>
-                <h3 className="mt-5 text-[1.55rem] font-bold tracking-[-0.04em] text-white md:text-[1.7rem]">
+                <h3 className="mt-4 text-[1.25rem] font-bold tracking-[-0.03em] text-white">
                   {founder.name}
                 </h3>
                 <p className="mt-2 text-[0.78rem] font-medium uppercase tracking-[0.18em] text-primary/90">
                   {t(founder.roleAl, founder.roleEn)}
                 </p>
-                <p className="mt-4 text-[0.94rem] leading-relaxed text-muted-foreground md:text-[0.98rem]">
+                <p className="mt-3 text-[0.875rem] leading-relaxed text-muted-foreground">
                   {t(founder.bioAl, founder.bioEn)}
                 </p>
               </PremiumCard>

@@ -151,11 +151,11 @@
   }
 
   .premium-card-interactive:hover {
-    transform: translateY(-6px);
+    transform: translateY(-3px);
     box-shadow:
       inset 0 1px 0 rgba(255, 255, 255, 0.07),
-      0 35px 70px -40px rgba(4, 7, 18, 0.95),
-      0 24px 60px -40px rgba(212, 177, 61, 0.52);
+      0 28px 55px -36px rgba(4, 7, 18, 0.95),
+      0 18px 44px -36px rgba(212, 177, 61, 0.44);
   }
 
   .premium-card-soft-glow {
@@ -188,7 +188,7 @@
   }
 
   .section-padding {
-    @apply py-16 md:py-20 lg:py-24;
+    @apply py-12 md:py-16 lg:py-20;
   }
 
   .gold-gradient-text {
