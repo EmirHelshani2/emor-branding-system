@@ -1,114 +1,184 @@
-import { ArrowUpRight, BarChart3, Globe, Megaphone, Sparkles } from "lucide-react";
+import { motion } from "framer-motion";
+import { Star } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import PremiumCard from "@/components/PremiumCard";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { fadeUp } from "@/lib/motion";
 
+const testimonials = [
+  {
+    logo: "/logos/mobishopdoni.png",
+    name: "MobiShop Doni",
+    handle: "@mobishopdoni.prishtine",
+    text: "qikjo e fundit pom pelqen, qeshtu grahi kejt se fort po rrika, faleminderit",
+  },
+  {
+    logo: "/logos/englishworld-school.jpg",
+    name: "English World School",
+    handle: "@englishworld_school",
+    text: "keni qene korrekt, kemi pare permiresime te medha ne faqe dhe faleminderit shume per bashkepunim.",
+  },
+  {
+    logo: "/logos/mobishopamigos.png",
+    name: "MobiShop Amigos",
+    handle: "@mobishopamigos",
+    text: "modelet e dizajnit par shume mire",
+  },
+  {
+    logo: "/logos/neo-mobile-store.png",
+    name: "Neo Mobile Store",
+    handle: "@neomobilestore_",
+    text: "Punojnë perfekt, shumë të mprehta, film i ke bo. I ke bo jashtëzakonisht mirë.",
+  },
+  {
+    logo: "/logos/dritonbublaku.png",
+    name: "Driton Bublaku",
+    handle: "@dritonbublakuphotographer",
+    text: "Faleminderit për bashkëpunimin! Ishte kënaqësi të punoja me ju. Ajo që e kisha imagjinuar prej kohësh, ju e realizuat saktësisht ashtu siç e desha, pa komplikime. Edhe një herë faleminderit, dhe ju uroj shumë sukses juve dhe ekipit tuaj!",
+  },
+  {
+    logo: "/logos/mondimobishop.png",
+    name: "Mondimobi Shop",
+    handle: "@mondimobishop",
+    text: "Faleminderit shumë, është perfekt. E ke goditur për mrekulli, sinqerisht je më i miri. E vlerësoj shumë këtë.",
+  },
+  {
+    logo: "/logos/techdropks.png",
+    name: "TechDrop.ks",
+    handle: "@techdrop.ks",
+    text: "Very satisfied with the result. The design looks modern, sharp, and professionally done.",
+  },
+];
+
 const Portfolio = () => {
   const { t } = useLanguage();
 
-  const projects = [
-    {
-      categoryAl: "Branding", categoryEn: "Branding",
-      titleAl: "Restorant premium me identitet të ri vizual",
-      titleEn: "Premium restaurant with a refreshed visual identity",
-      descAl: "Rikonceptim i plotë i markës me tone më elegante dhe vizuale sociale premium.",
-      descEn: "A full brand refresh with elegant tones and premium social visuals.",
-      resultValue: "+41% reach",
-      icon: Sparkles,
-    },
-    {
-      categoryAl: "Website", categoryEn: "Website",
-      titleAl: "Website premium për e-commerce",
-      titleEn: "Premium website for e-commerce",
-      descAl: "Faqe me fokus në besim, shpejtësi dhe strukturë blerjeje më të pastër.",
-      descEn: "Website built with focus on trust, speed, and a cleaner purchase journey.",
-      resultValue: "Higher conversion flow",
-      icon: Globe,
-    },
-    {
-      categoryAl: "Campaign", categoryEn: "Campaign",
-      titleAl: "Fushatë digjitale për startup teknologjik",
-      titleEn: "Digital campaign for a tech startup",
-      descAl: "Mesazh më i qartë, creative më i fortë dhe optimizim i vazhdueshëm.",
-      descEn: "Clearer messaging, stronger creative, and ongoing optimization.",
-      resultValue: "+186% lead signal",
-      icon: Megaphone,
-    },
-    {
-      categoryAl: "Social", categoryEn: "Social",
-      titleAl: "Prani sociale për klinikë dentare",
-      titleEn: "Social presence for a dental clinic",
-      descAl: "Sistem postimesh që rriti besueshmërinë dhe e bëri klinikën më moderne.",
-      descEn: "Content system that increased credibility and made the clinic feel more modern.",
-      resultValue: "Stronger trust perception",
-      icon: BarChart3,
-    },
-  ];
-
   return (
-    <main className="pb-14 md:pb-16">
+    <main className="pb-16 md:pb-20">
       <PageHero
-        label={t("Punët tona", "Our work")}
+        label={t("Klientët tanë", "Our clients")}
         title={t(
-          "Projekte ku branding-u, struktura dhe prezantimi punuan së bashku.",
-          "Projects where branding, structure, and presentation worked together."
+          "Besuar nga klientët.",
+          "Trusted by clients."
         )}
         subtitle={t(
-          "Shembuj se si marka ndihet më e fortë kur sistemi digjital është i kuruar mirë.",
-          "Examples of how a brand feels stronger when its digital system is carefully curated."
+          "Fjalë reale nga biznese reale. Kjo është arsyeja pse klientët tanë vazhdojnë të punojnë me ne.",
+          "Real words from real businesses. This is why our clients keep working with us."
         )}
         stats={[
-          { label: t("Lloje", "Types"), value: t("Brand, web, ads", "Brand, web, ads") },
-          { label: t("Qasje", "Approach"), value: t("Case-led", "Case-led") },
-          { label: t("Ndjesi", "Feel"), value: t("Premium", "Premium") },
+          {
+            label: t("Klientë", "Clients"),
+            value: "7+",
+          },
+          {
+            label: t("Vlerësim", "Rating"),
+            value: "5.0 ★",
+          },
+          {
+            label: t("Shërbime", "Services"),
+            value: t("Social, Web, AI", "Social, Web, AI"),
+          },
         ]}
       />
 
       <section className="section-padding pt-6">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid gap-4 md:grid-cols-2">
-            {projects.map((project, index) => (
+          <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+            {testimonials.map((client, index) => (
               <PremiumCard
-                key={project.titleEn}
+                key={client.name}
                 custom={index}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
                 variants={fadeUp}
-                className="px-4 py-4"
+                className="flex flex-col gap-4 px-5 py-5"
               >
-                <div className="flex items-start justify-between gap-3">
-                  <span className="premium-badge">
-                    <project.icon size={10} />
-                    {t(project.categoryAl, project.categoryEn)}
-                  </span>
-                  <span className="inline-flex items-center gap-1 text-[0.76rem] font-medium text-primary">
-                    <ArrowUpRight size={13} />
-                    {t("Case snapshot", "Case snapshot")}
-                  </span>
+                {/* Logo + name */}
+                <div className="flex items-center gap-3.5">
+                  <div className="h-12 w-12 shrink-0 overflow-hidden rounded-full border border-white/10 bg-white/[0.04]">
+                    <img
+                      src={client.logo}
+                      alt={client.name}
+                      className="h-full w-full object-contain p-1.5"
+                      onError={(e) => {
+                        const target = e.currentTarget;
+                        target.style.display = "none";
+                        const parent = target.parentElement;
+                        if (parent) {
+                          parent.style.display = "flex";
+                          parent.style.alignItems = "center";
+                          parent.style.justifyContent = "center";
+                          parent.style.fontSize = "1.1rem";
+                          parent.style.fontWeight = "700";
+                          parent.style.color = "hsl(44 71% 58%)";
+                          parent.innerText = client.name[0];
+                        }
+                      }}
+                    />
+                  </div>
+                  <div>
+                    <p className="text-[0.92rem] font-semibold text-white leading-tight">
+                      {client.name}
+                    </p>
+                    <p className="text-[0.75rem] text-muted-foreground mt-0.5">
+                      {client.handle}
+                    </p>
+                  </div>
                 </div>
 
-                <div className="mt-4 rounded-lg border border-primary/10 bg-[radial-gradient(circle_at_top_right,rgba(212,177,61,0.08),transparent_26%)] p-4">
-                  <div className="panel-grid h-24 rounded-lg border border-white/8 bg-background/50" />
+                {/* Stars */}
+                <div className="flex gap-0.5">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star key={i} size={13} className="fill-primary text-primary" />
+                  ))}
                 </div>
 
-                <h2 className="mt-4 text-[1.05rem] font-bold tracking-[-0.03em] text-white">
-                  {t(project.titleAl, project.titleEn)}
-                </h2>
-                <p className="mt-2 text-[0.8rem] leading-relaxed text-muted-foreground">
-                  {t(project.descAl, project.descEn)}
+                {/* Quote */}
+                <p className="text-[0.875rem] leading-relaxed text-muted-foreground italic flex-1">
+                  "{client.text}"
                 </p>
-
-                <div className="mt-3 rounded-lg border border-white/8 bg-white/[0.03] p-3">
-                  <p className="text-[0.58rem] uppercase tracking-[0.18em] text-primary/90">
-                    {t("Rezultat", "Result")}
-                  </p>
-                  <p className="mt-1.5 text-[0.84rem] font-semibold text-white">{project.resultValue}</p>
-                </div>
               </PremiumCard>
             ))}
           </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mt-10"
+          >
+            <PremiumCard
+              interactive={false}
+              className="px-6 py-7 text-center md:px-10"
+            >
+              <div className="panel-grid absolute inset-0 opacity-[0.12]" />
+              <div className="relative">
+                <p className="text-[0.82rem] uppercase tracking-[0.2em] text-primary/80">
+                  {t("Bëhuni klient i radhës", "Become our next client")}
+                </p>
+                <h3 className="mt-3 text-[1.35rem] font-bold tracking-[-0.03em] text-white">
+                  {t(
+                    "Gati të ndërtojmë diçka të mirë bashkë?",
+                    "Ready to build something great together?"
+                  )}
+                </h3>
+                <p className="mx-auto mt-2 max-w-md text-[0.875rem] text-muted-foreground">
+                  {t(
+                    "Na kontaktoni sot. Ju përgjigjemi brenda 24 orëve.",
+                    "Contact us today. We will reply within 24 hours."
+                  )}
+                </p>
+                <a
+                  href="/contact"
+                  className="btn-primary mt-5 inline-flex"
+                >
+                  {t("Fillo tani", "Get started")}
+                </a>
+              </div>
+            </PremiumCard>
+          </motion.div>
         </div>
       </section>
     </main>

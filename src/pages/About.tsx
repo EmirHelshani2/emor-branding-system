@@ -84,16 +84,17 @@ const About = () => {
                     <span className="h-1 w-1 rounded-full bg-primary shadow-[0_0_10px_rgba(212,177,61,0.8)]" />
                     {t("Çfarë ndërtojmë", "What we build")}
                   </span>
-                  <h2 className="mt-3 text-[1.25rem] font-bold tracking-[-0.04em] text-white md:text-[1.4rem]">
+<<<<<<< HEAD
+                  <h2 className="mt-4 text-[1.4rem] font-bold tracking-[-0.035em] text-white md:text-[1.6rem]">
                     {t(
-                      "Sistem i plotë prezence për markat që duan të duken më serioze online.",
-                      "A complete presence system for brands that want to look more serious online."
+                      "Social media, website dhe AI chatbot — ndërtuar për biznese serioze.",
+                      "Social media, websites, and AI chatbots — built for serious businesses."
                     )}
                   </h2>
-                  <p className="mt-2.5 max-w-xl text-[0.82rem] leading-relaxed text-muted-foreground">
+                  <p className="mt-3 max-w-xl text-[0.875rem] leading-relaxed text-muted-foreground">
                     {t(
-                      "EMOR ndihmon bizneset të duken më të kuruara, të komunikojnë më qartë dhe të konvertojnë më mirë.",
-                      "EMOR helps businesses look more curated, communicate with clarity, and convert better."
+                      "EMOR ndihmon bizneset në Kosovë dhe rajon të duken profesionale online, të komunikojnë me qartësi dhe të arrijnë më shumë klientë.",
+                      "EMOR helps businesses in Kosovo and the region look professional online, communicate clearly, and reach more customers."
                     )}
                   </p>
                 </div>
