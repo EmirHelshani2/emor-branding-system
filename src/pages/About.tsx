@@ -84,7 +84,6 @@ const About = () => {
                     <span className="h-1 w-1 rounded-full bg-primary shadow-[0_0_10px_rgba(212,177,61,0.8)]" />
                     {t("Çfarë ndërtojmë", "What we build")}
                   </span>
-<<<<<<< HEAD
                   <h2 className="mt-4 text-[1.4rem] font-bold tracking-[-0.035em] text-white md:text-[1.6rem]">
                     {t(
                       "Social media, website dhe AI chatbot — ndërtuar për biznese serioze.",
