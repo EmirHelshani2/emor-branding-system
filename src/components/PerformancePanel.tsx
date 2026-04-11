@@ -8,174 +8,131 @@ const PerformancePanel = () => {
   const { t } = useLanguage();
 
   const channels = [
-    {
-      label: t("Meta fushata", "Meta campaigns"),
-      value: 82,
-      tone: "bg-primary",
-    },
-    {
-      label: t("Përmbajtje organike", "Organic content"),
-      value: 68,
-      tone: "bg-primary/80",
-    },
-    {
-      label: t("Web konvertime", "Web conversions"),
-      value: 54,
-      tone: "bg-white/65",
-    },
+    { label: t("Meta fushata", "Meta campaigns"), value: 82, tone: "bg-primary" },
+    { label: t("Përmbajtje organike", "Organic content"), value: 68, tone: "bg-primary/80" },
+    { label: t("Web konvertime", "Web conversions"), value: 54, tone: "bg-white/65" },
   ];
 
   const quickSignals = [
-    {
-      icon: TrendingUp,
-      label: t("Rritje mujore", "Monthly growth"),
-      value: "+186%",
-    },
-    {
-      icon: Target,
-      label: t("Lead quality", "Lead quality"),
-      value: "94/100",
-    },
-    {
-      icon: Clock3,
-      label: t("Koha e përgjigjes", "Response time"),
-      value: "< 24h",
-    },
+    { icon: TrendingUp, label: t("Rritje mujore", "Monthly growth"), value: "+186%" },
+    { icon: Target, label: t("Lead quality", "Lead quality"), value: "94/100" },
+    { icon: Clock3, label: t("Koha e përgjigjes", "Response time"), value: "< 24h" },
   ];
 
   return (
     <PremiumCard
       interactive={false}
-      className="overflow-hidden px-5 py-5 md:px-6 md:py-6"
+      className="overflow-hidden px-4 py-4 md:px-5 md:py-5"
     >
-      <div className="panel-grid absolute inset-0 opacity-[0.18]" />
-      <div className="absolute inset-x-5 top-0 h-px bg-gradient-to-r from-transparent via-primary/80 to-transparent" />
+      <div className="panel-grid absolute inset-0 opacity-[0.14]" />
+      <div className="absolute inset-x-4 top-0 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
 
-      <div className="relative flex items-start justify-between gap-4">
+      <div className="relative flex items-start justify-between gap-3">
         <div>
           <span className="premium-badge">
-            <span className="h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_14px_rgba(212,177,61,0.8)]" />
+            <span className="h-1 w-1 rounded-full bg-primary shadow-[0_0_10px_rgba(212,177,61,0.8)]" />
             {t("Panel Strategjik", "Strategic Panel")}
           </span>
-          <h3 className="mt-4 text-[1.55rem] font-bold tracking-[-0.04em] text-white md:text-[1.85rem]">
+          <h3 className="mt-3 text-[1.15rem] font-bold tracking-[-0.03em] text-white md:text-[1.3rem]">
             {t("EMOR Growth Deck", "EMOR Growth Deck")}
           </h3>
-          <p className="mt-3 max-w-md text-[0.92rem] leading-relaxed text-muted-foreground md:text-[0.98rem]">
+          <p className="mt-2 max-w-md text-[0.78rem] leading-relaxed text-muted-foreground">
             {t(
-              "Një pamje elegante e performancës për markat që duan rritje, qartësi dhe prezencë më të fortë digjitale.",
-              "An elegant performance snapshot for brands that want growth, clarity, and stronger digital presence."
+              "Pamje elegante e performancës për markat që duan rritje dhe prezencë më të fortë.",
+              "Elegant performance snapshot for brands that want growth and stronger presence."
             )}
           </p>
         </div>
 
-        <div className="hidden rounded-[1.15rem] border border-white/10 bg-white/[0.03] p-2.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] sm:block">
+        <div className="hidden rounded-lg border border-white/8 bg-white/[0.03] p-2 sm:block">
           <img
             src={logo}
             alt="EMOR Marketing"
-            className="h-10 w-auto drop-shadow-[0_0_20px_rgba(212,177,61,0.2)]"
+            className="h-8 w-auto drop-shadow-[0_0_14px_rgba(212,177,61,0.15)]"
           />
         </div>
       </div>
 
-      <div className="mt-6 grid gap-3 md:grid-cols-[1.15fr_0.85fr]">
-        <div className="rounded-[1.25rem] border border-white/10 bg-white/[0.03] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
-          <p className="text-xs uppercase tracking-[0.28em] text-primary/90">
+      <div className="mt-4 grid gap-2.5 md:grid-cols-[1.15fr_0.85fr]">
+        <div className="rounded-lg border border-white/8 bg-white/[0.03] p-3">
+          <p className="text-[0.6rem] uppercase tracking-[0.24em] text-primary/90">
             {t("Momentumi i Markës", "Brand momentum")}
           </p>
-          <div className="mt-3 flex items-end gap-3">
+          <div className="mt-2 flex items-end gap-2.5">
             <AnimatedCounter
               value={186}
               prefix="+"
               suffix="%"
-              className="text-[2.45rem] font-extrabold tracking-[-0.06em] gold-gradient-text md:text-[2.75rem]"
+              className="text-[1.85rem] font-extrabold tracking-[-0.06em] gold-gradient-text"
             />
-            <span className="mb-1.5 inline-flex items-center gap-1 rounded-full border border-primary/20 bg-primary/10 px-2.5 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-primary">
-              <ArrowUpRight size={12} />
+            <span className="mb-1 inline-flex items-center gap-1 rounded-full border border-primary/20 bg-primary/10 px-2 py-0.5 text-[0.58rem] font-semibold uppercase tracking-[0.14em] text-primary">
+              <ArrowUpRight size={10} />
               {t("Q4 Outlook", "Q4 Outlook")}
             </span>
           </div>
-          <div className="mt-5 grid gap-3 sm:grid-cols-3">
-            <div className="rounded-[1.05rem] border border-white/8 bg-background/50 p-3.5">
-              <p className="text-xs uppercase tracking-[0.24em] text-muted-foreground">
-                {t("Reach", "Reach")}
-              </p>
-              <AnimatedCounter
-                value={284}
-                suffix="k"
-                className="mt-2 block text-[1.35rem] font-bold tracking-[-0.05em] text-white"
-              />
-            </div>
-            <div className="rounded-[1.05rem] border border-white/8 bg-background/50 p-3.5">
-              <p className="text-xs uppercase tracking-[0.24em] text-muted-foreground">
-                {t("Leads", "Leads")}
-              </p>
-              <AnimatedCounter
-                value={124}
-                className="mt-2 block text-[1.35rem] font-bold tracking-[-0.05em] text-white"
-              />
-            </div>
-            <div className="rounded-[1.05rem] border border-white/8 bg-background/50 p-3.5">
-              <p className="text-xs uppercase tracking-[0.24em] text-muted-foreground">
-                {t("CTR", "CTR")}
-              </p>
-              <AnimatedCounter
-                value={5.8}
-                decimals={1}
-                suffix="%"
-                className="mt-2 block text-[1.35rem] font-bold tracking-[-0.05em] text-white"
-              />
-            </div>
+          <div className="mt-3 grid gap-2 sm:grid-cols-3">
+            {[
+              { label: t("Reach", "Reach"), value: 284, suffix: "k" },
+              { label: t("Leads", "Leads"), value: 124 },
+              { label: t("CTR", "CTR"), value: 5.8, decimals: 1, suffix: "%" },
+            ].map((m) => (
+              <div key={m.label} className="rounded-lg border border-white/6 bg-background/50 p-2.5">
+                <p className="text-[0.58rem] uppercase tracking-[0.2em] text-muted-foreground">{m.label}</p>
+                <AnimatedCounter
+                  value={m.value}
+                  suffix={m.suffix}
+                  decimals={m.decimals}
+                  className="mt-1 block text-[1.05rem] font-bold tracking-[-0.04em] text-white"
+                />
+              </div>
+            ))}
           </div>
         </div>
 
-        <div className="space-y-3 rounded-[1.25rem] border border-white/10 bg-white/[0.03] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
-          <p className="text-xs uppercase tracking-[0.28em] text-primary/90">
+        <div className="space-y-2.5 rounded-lg border border-white/8 bg-white/[0.03] p-3">
+          <p className="text-[0.6rem] uppercase tracking-[0.24em] text-primary/90">
             {t("Burimet Kryesore", "Primary channels")}
           </p>
           {channels.map((channel) => (
             <div key={channel.label}>
-              <div className="mb-2 flex items-center justify-between text-[0.92rem]">
+              <div className="mb-1 flex items-center justify-between text-[0.78rem]">
                 <span className="text-white">{channel.label}</span>
                 <span className="text-muted-foreground">{channel.value}%</span>
               </div>
-              <div className="h-2.5 overflow-hidden rounded-full bg-white/6">
+              <div className="h-1.5 overflow-hidden rounded-full bg-white/6">
                 <div
-                  className={`h-full rounded-full ${channel.tone} shadow-[0_0_16px_rgba(212,177,61,0.25)]`}
+                  className={`h-full rounded-full ${channel.tone} shadow-[0_0_10px_rgba(212,177,61,0.2)]`}
                   style={{ width: `${channel.value}%` }}
                 />
               </div>
             </div>
           ))}
 
-          <div className="mt-4 rounded-[1.05rem] border border-primary/15 bg-primary/[0.06] p-3.5">
-            <p className="text-xs uppercase tracking-[0.24em] text-primary/90">
+          <div className="mt-3 rounded-lg border border-primary/12 bg-primary/[0.05] p-2.5">
+            <p className="text-[0.58rem] uppercase tracking-[0.2em] text-primary/90">
               {t("Shënim Strategjik", "Strategy note")}
             </p>
-            <p className="mt-2.5 text-[0.9rem] leading-relaxed text-muted-foreground">
+            <p className="mt-1.5 text-[0.76rem] leading-relaxed text-muted-foreground">
               {t(
-                "Përmbajtja me drejtim të qartë vizual po sjell më shumë klikime dhe lead-e më të kualifikuara sesa fushatat pa strukturë kreative.",
-                "Creative-led content is driving more clicks and better-qualified leads than campaigns without a strong visual system."
+                "Përmbajtja me drejtim vizual po sjell më shumë klikime dhe lead-e më të kualifikuara.",
+                "Creative-led content is driving more clicks and better-qualified leads."
               )}
             </p>
           </div>
         </div>
       </div>
 
-      <div className="mt-5 grid gap-3 sm:grid-cols-3">
+      <div className="mt-3 grid gap-2 sm:grid-cols-3">
         {quickSignals.map((signal) => (
           <div
             key={signal.label}
-            className="rounded-[1.05rem] border border-white/10 bg-background/55 px-3.5 py-3.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]"
+            className="rounded-lg border border-white/8 bg-background/50 px-3 py-2.5"
           >
-            <div className="flex items-center gap-2 text-primary">
-              <signal.icon size={15} />
-              <span className="text-[0.68rem] uppercase tracking-[0.2em]">
-                {signal.label}
-              </span>
+            <div className="flex items-center gap-1.5 text-primary">
+              <signal.icon size={12} />
+              <span className="text-[0.58rem] uppercase tracking-[0.18em]">{signal.label}</span>
             </div>
-            <p className="mt-2.5 text-lg font-bold tracking-[-0.04em] text-white">
-              {signal.value}
-            </p>
+            <p className="mt-1.5 text-[0.88rem] font-bold tracking-[-0.03em] text-white">{signal.value}</p>
           </div>
         ))}
       </div>

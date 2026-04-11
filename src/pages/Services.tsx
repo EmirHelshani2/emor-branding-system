@@ -111,7 +111,7 @@ const Services = () => {
   ];
 
   return (
-    <main className="pb-16 md:pb-20">
+    <main className="pb-14 md:pb-16">
       <PageHero
         label={t("Shërbimet tona", "Our services")}
         title={t(
@@ -140,7 +140,7 @@ const Services = () => {
 
       <section className="section-padding pt-6">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="space-y-5">
+          <div className="space-y-4">
             {services.map((service, index) => (
               <PremiumCard
                 key={service.titleEn}
@@ -149,7 +149,7 @@ const Services = () => {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.15 }}
                 variants={fadeUp}
-                className="px-5 py-5 md:px-6 md:py-6"
+                className="px-4 py-4 md:px-5 md:py-5"
               >
                 <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
                   <div>
@@ -187,10 +187,10 @@ const Services = () => {
                         {t("Çfarë përfshihet", "What's included")}
                       </p>
                       <div className="mt-3 space-y-2">
-                        {(t(
+                        {t(
                           service.featuresAl.join("|"),
                           service.featuresEn.join("|")
-                        ))
+                        )
                           .split("|")
                           .map((item) => (
                             <div

@@ -202,7 +202,7 @@ const Index = () => {
             >
               <PremiumCard
                 interactive={false}
-                className="overflow-hidden px-5 py-5 md:px-6 md:py-6"
+                className="overflow-hidden px-4 py-4 md:px-5 md:py-5"
               >
                 <div className="panel-grid absolute inset-0 opacity-[0.14]" />
                 <div className="absolute inset-x-5 top-0 h-px bg-gradient-to-r from-transparent via-primary/75 to-transparent" />
@@ -280,7 +280,7 @@ const Index = () => {
           </div>
         </div>
 
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/35 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
       </section>
 
       {/* CORE SERVICES */}
@@ -411,7 +411,8 @@ const Index = () => {
                   <span className="text-[0.8rem] text-muted-foreground">/month</span>
                 </div>
                 <p className="text-[0.78rem] text-primary/70">
-                  {t("Muaji i parë:", "First month:")} <span className="font-semibold text-primary">{plan.firstMonth}</span>
+                  {t("Muaji i parë:", "First month:")}{" "}
+                  <span className="font-semibold text-primary">{plan.firstMonth}</span>
                 </p>
 
                 <div className="mt-4 flex-1 space-y-2 rounded-xl border border-white/8 bg-white/[0.025] p-3.5">

@@ -25,10 +25,10 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-primary/90">
+            <h3 className="text-xs font-semibold uppercase tracking-[0.22em] text-primary/90">
               {t("Lidhje", "Links")}
             </h3>
-            <div className="mt-3 flex flex-col gap-2.5">
+            <div className="mt-2.5 flex flex-col gap-2">
               {[
                 { path: "/", al: "Ballina", en: "Home" },
                 { path: "/services", al: "Shërbime", en: "Services" },
@@ -40,7 +40,7 @@ const Footer = () => {
                 <Link
                   key={item.path}
                   to={item.path}
-                  className="text-sm text-muted-foreground transition hover:text-white"
+                  className="text-[0.8rem] text-muted-foreground transition hover:text-white"
                 >
                   {t(item.al, item.en)}
                 </Link>
@@ -49,7 +49,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-primary/90">
+            <h3 className="text-xs font-semibold uppercase tracking-[0.22em] text-primary/90">
               {t("Shërbime", "Services")}
             </h3>
             <div className="mt-3 flex flex-col gap-2.5 text-sm text-muted-foreground">
@@ -61,32 +61,32 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-primary/90">
+            <h3 className="text-xs font-semibold uppercase tracking-[0.22em] text-primary/90">
               {t("Kontakt", "Contact")}
             </h3>
-            <div className="mt-3 flex flex-col gap-2.5">
+            <div className="mt-2.5 flex flex-col gap-2">
               <a
                 href="mailto:info@emormarketing.com"
-                className="flex items-center gap-2 text-sm text-muted-foreground transition hover:text-white"
+                className="flex items-center gap-2 text-[0.8rem] text-muted-foreground transition hover:text-white"
               >
-                <Mail size={14} className="text-primary" />
+                <Mail size={13} className="text-primary" />
                 info@emormarketing.com
               </a>
               <a
                 href="https://instagram.com/emormarketing"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm text-muted-foreground transition hover:text-white"
+                className="flex items-center gap-2 text-[0.8rem] text-muted-foreground transition hover:text-white"
               >
-                <Instagram size={14} className="text-primary" />
+                <Instagram size={13} className="text-primary" />
                 @emormarketing
               </a>
             </div>
           </div>
         </div>
 
-        <div className="mt-8 border-t border-white/8 pt-5 text-center">
-          <p className="text-xs tracking-[0.18em] text-muted-foreground">
+        <div className="mt-6 border-t border-white/6 pt-4 text-center">
+          <p className="text-[0.68rem] tracking-[0.16em] text-muted-foreground">
             © {new Date().getFullYear()} EMOR Marketing.{" "}
             {t("Të gjitha të drejtat e rezervuara.", "All rights reserved.")}
           </p>

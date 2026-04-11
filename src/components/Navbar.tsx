@@ -21,8 +21,8 @@ const Navbar = () => {
   const location = useLocation();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
-    window.addEventListener("scroll", onScroll);
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
@@ -52,7 +52,6 @@ const Navbar = () => {
             <div className="hidden lg:flex items-center gap-0.5">
               {navLinks.map((link) => {
                 const active = location.pathname === link.path;
-
                 return (
                   <Link
                     key={link.path}
@@ -86,10 +85,10 @@ const Navbar = () => {
 
             <button
               onClick={() => setMobileOpen((prev) => !prev)}
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] text-foreground transition hover:border-primary/25 lg:hidden"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] text-foreground transition hover:border-primary/25 lg:hidden"
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
             >
-              {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+              {mobileOpen ? <X size={18} /> : <Menu size={18} />}
             </button>
           </div>
 
@@ -106,7 +105,6 @@ const Navbar = () => {
                   <div className="grid grid-cols-2 gap-1.5">
                     {navLinks.map((link) => {
                       const active = location.pathname === link.path;
-
                       return (
                         <Link
                           key={link.path}

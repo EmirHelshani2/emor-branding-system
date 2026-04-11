@@ -405,7 +405,7 @@ const Pricing = () => {
   );
 
   return (
-    <main className="pb-16 md:pb-20">
+    <main className="pb-14 md:pb-16">
       <PageHero
         label={t("Çmimet & Paketat", "Pricing & Packages")}
         title={t(
