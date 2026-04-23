@@ -5,75 +5,94 @@ import PremiumCard from "@/components/PremiumCard";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { fadeUp } from "@/lib/motion";
 
+// rating: number of full stars (out of 5). half-stars shown via opacity.
 const testimonials = [
   {
     logo: "/logos/mobishopdoni.png",
     name: "MobiShop Doni",
     handle: "@mobishopdoni.prishtine",
+    rating: 5,
     text: "qikjo e fundit pom pelqen, qeshtu grahi kejt se fort po rrika, faleminderit",
   },
   {
     logo: "/logos/englishworld-school.jpg",
     name: "English World School",
     handle: "@englishworld_school",
+    rating: 5,
     text: "keni qene korrekt, kemi pare permiresime te medha ne faqe dhe faleminderit shume per bashkepunim.",
   },
   {
     logo: "/logos/mobishopamigos.png",
     name: "MobiShop Amigos",
     handle: "@mobishopamigos",
+    rating: 4,
     text: "modelet e dizajnit par shume mire",
   },
   {
     logo: "/logos/neo-mobile-store.png",
     name: "Neo Mobile Store",
     handle: "@neomobilestore_",
+    rating: 5,
     text: "Punojnë perfekt, shumë të mprehta, film i ke bo. I ke bo jashtëzakonisht mirë.",
   },
   {
     logo: "/logos/dritonbublaku.png",
     name: "Driton Bublaku",
     handle: "@dritonbublakuphotographer",
+    rating: 5,
     text: "Faleminderit për bashkëpunimin! Ishte kënaqësi të punoja me ju. Ajo që e kisha imagjinuar prej kohësh, ju e realizuat saktësisht ashtu siç e desha, pa komplikime. Edhe një herë faleminderit, dhe ju uroj shumë sukses juve dhe ekipit tuaj!",
   },
   {
     logo: "/logos/mondimobishop.png",
     name: "Mondimobi Shop",
     handle: "@mondimobishop",
+    rating: 5,
     text: "Faleminderit shumë, është perfekt. E ke goditur për mrekulli, sinqerisht je më i miri. E vlerësoj shumë këtë.",
   },
   {
     logo: "/logos/techdropks.png",
     name: "TechDrop.ks",
     handle: "@techdrop.ks",
+    rating: 5,
     text: "Very satisfied with the result. The design looks modern, sharp, and professionally done.",
   },
 ];
 
+const StarRating = ({ rating }: { rating: number }) => (
+  <div className="flex gap-0.5">
+    {Array.from({ length: 5 }).map((_, i) => (
+      <Star
+        key={i}
+        size={13}
+        className={
+          i < rating
+            ? "fill-primary text-primary"
+            : "fill-white/10 text-white/20"
+        }
+      />
+    ))}
+  </div>
+);
+
 const Portfolio = () => {
   const { t } = useLanguage();
+
+  const avgRating = (
+    testimonials.reduce((sum, c) => sum + c.rating, 0) / testimonials.length
+  ).toFixed(1);
 
   return (
     <main className="pb-16 md:pb-20">
       <PageHero
         label={t("Klientët tanë", "Our clients")}
-        title={t(
-          "Besuar nga klientët.",
-          "Trusted by clients."
-        )}
+        title={t("Besuar nga klientët.", "Trusted by clients.")}
         subtitle={t(
           "Fjalë reale nga biznese reale. Kjo është arsyeja pse klientët tanë vazhdojnë të punojnë me ne.",
           "Real words from real businesses. This is why our clients keep working with us."
         )}
         stats={[
-          {
-            label: t("Klientë", "Clients"),
-            value: "7+",
-          },
-          {
-            label: t("Vlerësim", "Rating"),
-            value: "5.0 ★",
-          },
+          { label: t("Klientë", "Clients"), value: "7+" },
+          { label: t("Vlerësim", "Rating"), value: `${avgRating} ★` },
           {
             label: t("Shërbime", "Services"),
             value: t("Social, Web, AI", "Social, Web, AI"),
@@ -128,11 +147,7 @@ const Portfolio = () => {
                 </div>
 
                 {/* Stars */}
-                <div className="flex gap-0.5">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} size={13} className="fill-primary text-primary" />
-                  ))}
-                </div>
+                <StarRating rating={client.rating} />
 
                 {/* Quote */}
                 <p className="text-[0.875rem] leading-relaxed text-muted-foreground italic flex-1">
@@ -170,10 +185,7 @@ const Portfolio = () => {
                     "Contact us today. We will reply within 24 hours."
                   )}
                 </p>
-                <a
-                  href="/contact"
-                  className="btn-primary mt-5 inline-flex"
-                >
+                <a href="/contact" className="btn-primary mt-5 inline-flex">
                   {t("Fillo tani", "Get started")}
                 </a>
               </div>

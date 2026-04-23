@@ -3,11 +3,12 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import QuickNav from "@/components/QuickNav";
 import logo from "@/assets/emor-logo.png";
 
 const navLinks = [
   { path: "/", al: "Ballina", en: "Home" },
-  { path: "/services", al: "Shërbimet", en: "Services" },
+  { path: "/services", al: "Shërbime", en: "Services" },
   { path: "/pricing", al: "Çmimet", en: "Pricing" },
   { path: "/clients", al: "Klientët", en: "Clients" },
   { path: "/about", al: "Rreth nesh", en: "About" },
@@ -41,14 +42,16 @@ const Navbar = () => {
           }`}
         >
           <div className="flex items-center justify-between gap-4 px-4 py-2.5 sm:px-5 lg:px-6">
+            {/* Logo */}
             <Link to="/" className="flex items-center">
               <img
                 src={logo}
                 alt="EMOR Marketing"
-                className="h-11 w-auto object-contain sm:h-12"
+                className="h-14 w-auto object-contain sm:h-16"
               />
             </Link>
 
+            {/* Desktop nav links */}
             <div className="hidden lg:flex items-center gap-0.5">
               {navLinks.map((link) => {
                 const active = location.pathname === link.path;
@@ -68,7 +71,9 @@ const Navbar = () => {
               })}
             </div>
 
-            <div className="hidden lg:flex items-center gap-2.5">
+            {/* Desktop right actions */}
+            <div className="hidden lg:flex items-center gap-2">
+              <QuickNav />
               <button
                 onClick={toggle}
                 className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 text-[0.75rem] font-semibold tracking-[0.16em] text-muted-foreground transition hover:border-primary/30 hover:text-primary"
@@ -83,15 +88,20 @@ const Navbar = () => {
               </Link>
             </div>
 
-            <button
-              onClick={() => setMobileOpen((prev) => !prev)}
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] text-foreground transition hover:border-primary/25 lg:hidden"
-              aria-label={mobileOpen ? "Close menu" : "Open menu"}
-            >
-              {mobileOpen ? <X size={18} /> : <Menu size={18} />}
-            </button>
+            {/* Mobile: QuickNav + hamburger */}
+            <div className="flex items-center gap-2 lg:hidden">
+              <QuickNav />
+              <button
+                onClick={() => setMobileOpen((prev) => !prev)}
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] text-foreground transition hover:border-primary/25"
+                aria-label={mobileOpen ? "Close menu" : "Open menu"}
+              >
+                {mobileOpen ? <X size={18} /> : <Menu size={18} />}
+              </button>
+            </div>
           </div>
 
+          {/* Mobile menu */}
           <AnimatePresence>
             {mobileOpen && (
               <motion.div
