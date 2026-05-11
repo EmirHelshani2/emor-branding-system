@@ -8,10 +8,7 @@ import {
   Mail,
   Phone,
   Share2,
-  Shield,
   Star,
-  TrendingUp,
-  Users,
 } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
 import PremiumCard from "@/components/PremiumCard";
@@ -66,49 +63,6 @@ const services = [
     featuresAl: ["Aktiv 24/7 — pa ndërprerje", "AI ose transferim te njeri", "Të gjitha platformat"],
     featuresEn: ["Active 24/7 — no downtime", "AI or transfer to human", "All platforms"],
     tab: "chatbot",
-  },
-];
-
-const proofCards = [
-  {
-    icon: TrendingUp,
-    metric: "4x",
-    labelAl: "rritje mesatare e angazhimit",
-    labelEn: "average engagement growth",
-    descAl:
-      "Klientët tanë të Social Media shohin mesatarisht 4x më shumë angazhim brenda 3 muajve të parë.",
-    descEn:
-      "Our Social Media clients see an average 4x engagement increase within the first 3 months.",
-  },
-  {
-    icon: Users,
-    metric: "7+",
-    labelAl: "biznese të kënaqura",
-    labelEn: "satisfied businesses",
-    descAl:
-      "Klientë aktivë nga sektorë të ndryshëm — dyqane, shkolla, fotografë dhe biznese teknologjie.",
-    descEn:
-      "Active clients from different sectors — shops, schools, photographers and tech businesses.",
-  },
-  {
-    icon: Bot,
-    metric: "24/7",
-    labelAl: "chatbot aktiv pa pushim",
-    labelEn: "chatbot active non-stop",
-    descAl:
-      "AI Chatbot i përgjigjet çdo mesazhi automatikisht — edhe kur ju jeni duke fjetur ose pushuar.",
-    descEn:
-      "AI Chatbot replies to every message automatically — even when you are asleep or on holiday.",
-  },
-  {
-    icon: Shield,
-    metric: "100%",
-    labelAl: "website të sigurta me SSL",
-    labelEn: "websites with full SSL",
-    descAl:
-      "Çdo website që ndërtojmë vjen me SSL, backup të rregullt dhe kod të pastër, të sigurt.",
-    descEn:
-      "Every website we build comes with SSL, regular backups, and clean, secure code.",
   },
 ];
 
@@ -259,7 +213,7 @@ const Index = () => {
                     ))}
                   </div>
 
-                  <div className="mt-4 grid grid-cols-3 gap-2">
+                  <div className="mt-4 grid grid-cols-2 gap-2">
                     <div className="rounded-[0.85rem] border border-white/10 bg-background/55 px-2.5 py-2.5 text-center">
                       <p className="text-[0.6rem] uppercase tracking-[0.12em] text-primary/80">
                         {t("Përgjigje", "Reply")}
@@ -271,12 +225,6 @@ const Index = () => {
                         {t("Raport", "Report")}
                       </p>
                       <p className="mt-1 text-[0.88rem] font-bold text-white">{t("Mujor", "Monthly")}</p>
-                    </div>
-                    <div className="rounded-[0.85rem] border border-white/10 bg-background/55 px-2.5 py-2.5 text-center">
-                      <p className="text-[0.6rem] uppercase tracking-[0.12em] text-primary/80">
-                        AI Bot
-                      </p>
-                      <p className="mt-1 text-[0.88rem] font-bold text-white">24/7</p>
                     </div>
                   </div>
                 </div>
@@ -361,55 +309,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── 3. PROOF / RESULTS ──────────────────────────────────────────── */}
-      <section className="section-shell section-padding bg-secondary/20">
-        <div className="container mx-auto px-4 lg:px-8">
-          <SectionHeading
-            label={t("Rezultatet", "Results")}
-            title={t(
-              "Çfarë fiton biznesi juaj me EMOR.",
-              "What your business gains with EMOR."
-            )}
-            subtitle={t(
-              "Numra realë. Klientë realë. Rezultate reale.",
-              "Real numbers. Real clients. Real results."
-            )}
-          />
-
-          <div className="grid gap-4 sm:grid-cols-2">
-            {proofCards.map((card, index) => (
-              <PremiumCard
-                key={card.labelEn}
-                custom={index}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.2 }}
-                variants={fadeUp}
-                className="flex gap-4 px-5 py-5"
-              >
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[0.85rem] border border-primary/15 bg-primary/10 text-primary mt-0.5">
-                  <card.icon size={18} />
-                </div>
-                <div>
-                  <div className="flex items-baseline gap-2">
-                    <span className="text-[2rem] font-extrabold tracking-[-0.05em] gold-gradient-text leading-none">
-                      {card.metric}
-                    </span>
-                    <span className="text-[0.78rem] font-medium text-white/70">
-                      {t(card.labelAl, card.labelEn)}
-                    </span>
-                  </div>
-                  <p className="mt-1.5 text-[0.82rem] leading-relaxed text-muted-foreground">
-                    {t(card.descAl, card.descEn)}
-                  </p>
-                </div>
-              </PremiumCard>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── 4. TRUST — CLIENT QUOTES ────────────────────────────────────── */}
+      {/* ── 3. TRUST — CLIENT QUOTES ────────────────────────────────────── */}
       <section className="section-shell section-padding">
         <div className="container mx-auto px-4 lg:px-8">
           <SectionHeading
@@ -541,7 +441,7 @@ const Index = () => {
               </div>
 
               <div className="mt-5 text-center">
-                <Link to="/contact" className="btn-secondary inline-flex">
+                <Link to="/contact#contact-form" className="btn-secondary inline-flex">
                   {t("Ose plotësoni formularin", "Or fill out the form")} <ArrowRight size={14} />
                 </Link>
               </div>

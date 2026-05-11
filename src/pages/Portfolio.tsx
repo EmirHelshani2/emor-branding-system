@@ -90,14 +90,6 @@ const Portfolio = () => {
           "Fjalë reale nga biznese reale. Kjo është arsyeja pse klientët tanë vazhdojnë të punojnë me ne.",
           "Real words from real businesses. This is why our clients keep working with us."
         )}
-        stats={[
-          { label: t("Klientë", "Clients"), value: "7+" },
-          { label: t("Vlerësim", "Rating"), value: `${avgRating} ★` },
-          {
-            label: t("Shërbime", "Services"),
-            value: t("Social, Web, AI", "Social, Web, AI"),
-          },
-        ]}
       />
 
       <section className="section-padding pt-6">

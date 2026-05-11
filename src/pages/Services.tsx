@@ -132,20 +132,6 @@ const Services = () => {
           "Social media, website dhe AI chatbot — ndërtuar për biznese që duan prani profesionale online.",
           "Social media, website, and AI chatbot — built for businesses that want a professional online presence."
         )}
-        stats={[
-          {
-            label: t("Social Media nga", "Social Media from"),
-            value: "€69.99/mo",
-          },
-          {
-            label: t("Website nga", "Website from"),
-            value: "€49.99",
-          },
-          {
-            label: t("AI Chatbot nga", "AI Chatbot from"),
-            value: "€59.99",
-          },
-        ]}
       />
 
       <section className="section-padding pt-6">

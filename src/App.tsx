@@ -6,6 +6,7 @@ import { LanguageProvider } from "@/contexts/LanguageContext";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
+import ChatWidget from "@/components/ChatWidget";
 import Index from "./pages/Index";
 import Services from "./pages/Services";
 import Portfolio from "./pages/Portfolio"; // serves /clients route
@@ -35,6 +36,7 @@ const App = () => (
             </Routes>
             <Footer />
             <BackToTop />
+            <ChatWidget />
           </div>
         </BrowserRouter>
       </LanguageProvider>

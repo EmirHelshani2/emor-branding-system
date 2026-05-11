@@ -1,6 +1,5 @@
 import { Link, useSearchParams } from "react-router-dom";
 import { ArrowRight, Bot, Check, Globe, Package, Share2, Star } from "lucide-react";
-import PageHero from "@/components/PageHero";
 import PremiumCard from "@/components/PremiumCard";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -418,24 +417,7 @@ const Pricing = () => {
 
   return (
     <main className="pb-14 md:pb-16">
-      <PageHero
-        label={t("Çmimet & Paketat", "Pricing & Packages")}
-        title={t(
-          "Çmime të qarta. Pa surpriza.",
-          "Clear pricing. No surprises."
-        )}
-        subtitle={t(
-          "Zgjidhni shërbimin që i përshtatet biznesit tuaj. Çdo paketë është gati për të filluar.",
-          "Choose the service that fits your business. Every package is ready to start."
-        )}
-        stats={[
-          { label: t("Social Media nga", "Social Media from"), value: "€69.99/mo" },
-          { label: t("Website nga", "Website from"), value: "€49.99" },
-          { label: t("AI Chatbot nga", "AI Chatbot from"), value: "€59.99" },
-        ]}
-      />
-
-      <section className="section-padding pt-6">
+      <section className="section-padding pt-10">
         <div className="container mx-auto px-4 lg:px-8">
           <Tabs defaultValue={defaultTab}>
             <div className="mb-8 overflow-x-auto">

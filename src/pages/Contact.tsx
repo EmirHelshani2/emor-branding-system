@@ -1,6 +1,6 @@
-import { useState } from "react";
-import { useSearchParams } from "react-router-dom";
-import { Bot, Instagram, Mail, Phone, Send } from "lucide-react";
+import { useState, useEffect } from "react";
+import { useSearchParams, useLocation } from "react-router-dom";
+import { Instagram, Mail, Phone, Send } from "lucide-react";
 import { toast } from "sonner";
 import PageHero from "@/components/PageHero";
 import PremiumCard from "@/components/PremiumCard";
@@ -13,6 +13,21 @@ const CONTACT_PHONES = ["+383 49 569 626", "+383 45 224 443"];
 const Contact = () => {
   const { t } = useLanguage();
   const [searchParams] = useSearchParams();
+  const { hash } = useLocation();
+
+  // Scroll to the form when navigated with #contact-form hash, accounting for sticky navbar
+  useEffect(() => {
+    if (hash === "#contact-form") {
+      const el = document.getElementById("contact-form");
+      if (el) {
+        setTimeout(() => {
+          const navbarHeight = 100; // safe offset for sticky navbar
+          const top = el.getBoundingClientRect().top + window.scrollY - navbarHeight;
+          window.scrollTo({ top, behavior: "smooth" });
+        }, 120);
+      }
+    }
+  }, [hash]);
   const selectedPackage = searchParams.get("package") || "";
 
   const initialMessage = selectedPackage
@@ -77,12 +92,11 @@ const Contact = () => {
         )}
         stats={[
           { label: t("Përgjigje", "Reply time"), value: "< 24h" },
-          { label: "AI Chatbot", value: "24/7" },
           { label: t("Konsultim", "Consultation"), value: t("Falas", "Free") },
         ]}
       />
 
-      <section className="section-padding pt-6">
+      <section id="contact-form" className="section-padding pt-6">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid gap-4 lg:grid-cols-[1.15fr_0.85fr]">
 
@@ -233,41 +247,9 @@ const Contact = () => {
                 </div>
               </PremiumCard>
 
-              {/* 24/7 availability card */}
-              <PremiumCard
-                custom={1}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.2 }}
-                variants={fadeUp}
-                className="px-4 py-4 border-primary/15"
-              >
-                <div className="flex items-start gap-3">
-                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[0.75rem] border border-primary/20 bg-primary/10 text-primary">
-                    <Bot size={15} />
-                  </div>
-                  <div>
-                    <div className="flex items-center gap-2">
-                      <p className="text-[0.875rem] font-bold text-white">
-                        {t("Disponueshëm 24/7", "Available 24/7")}
-                      </p>
-                      <span className="rounded-full bg-primary/15 px-2 py-0.5 text-[0.6rem] font-semibold uppercase tracking-[0.14em] text-primary">
-                        AI
-                      </span>
-                    </div>
-                    <p className="mt-1 text-[0.75rem] leading-relaxed text-muted-foreground">
-                      {t(
-                        "Me paketën AI Chatbot, biznesi juaj u përgjigjet klientëve automatikisht çdo orë — edhe natën, edhe fundjavën. Zero mesazhe të humbur.",
-                        "With the AI Chatbot package, your business replies to customers automatically every hour — even at night and on weekends. Zero missed messages."
-                      )}
-                    </p>
-                  </div>
-                </div>
-              </PremiumCard>
-
               {/* Free consultation note */}
               <PremiumCard
-                custom={2}
+                custom={1}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
