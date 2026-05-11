@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Eye, Shield, Sparkles, Target, TrendingUp } from "lucide-react";
+import { ArrowRight, CheckCircle, Eye, MessageCircle, Shield, Sparkles, Target, TrendingUp } from "lucide-react";
+import { Link } from "react-router-dom";
 import PageHero from "@/components/PageHero";
 import PremiumCard from "@/components/PremiumCard";
 import SectionHeading from "@/components/SectionHeading";
@@ -12,6 +13,7 @@ const About = () => {
   const founders = [
     {
       name: "Orik Bublaku",
+      photo: "/team/orik.jpg",
       roleAl: "Creative & Strategy",
       roleEn: "Creative & Strategy",
       bioAl: "Orik udhëheq drejtimin kreativ të EMOR. Siguron që çdo projekt të ketë identitet të fortë dhe mesazh që rezonon.",
@@ -19,6 +21,7 @@ const About = () => {
     },
     {
       name: "Emir Helshani",
+      photo: "/team/emir.jpg",
       roleAl: "Technical & Systems",
       roleEn: "Technical & Systems",
       bioAl: "Emir ndërton sistemet teknike pas çdo projekti. Nga websites te AI, ai mban ekzekutimin të pastër dhe të besueshëm.",
@@ -50,6 +53,41 @@ const About = () => {
     },
   ];
 
+  const processSteps = [
+    {
+      step: "01",
+      icon: MessageCircle,
+      titleAl: "Na kontaktoni",
+      titleEn: "Contact us",
+      descAl: "Na shkruani me email ose Instagram. Ju përgjigjemi brenda 24 orëve.",
+      descEn: "Reach out via email or Instagram. We reply within 24 hours.",
+    },
+    {
+      step: "02",
+      icon: Target,
+      titleAl: "Konsultim falas",
+      titleEn: "Free consultation",
+      descAl: "Diskutojmë biznesin tuaj, qëllimet dhe çfarë ju nevojitet saktësisht.",
+      descEn: "We discuss your business, goals, and exactly what you need.",
+    },
+    {
+      step: "03",
+      icon: CheckCircle,
+      titleAl: "Plan i qartë",
+      titleEn: "Clear plan",
+      descAl: "Hartojmë plan konkret — çfarë bëhet, kur dhe me çfarë çmimi. Pa surpriza.",
+      descEn: "We build a concrete plan — what gets done, when, and at what price. No surprises.",
+    },
+    {
+      step: "04",
+      icon: TrendingUp,
+      titleAl: "Ekzekutim & Raportim",
+      titleEn: "Execution & Reporting",
+      descAl: "Fillojmë punën menjëherë. Raport mujor dhe komunikim i vazhdueshëm.",
+      descEn: "We start right away. Monthly reports and continuous communication.",
+    },
+  ];
+
   return (
     <main className="pb-14 md:pb-16">
       <PageHero
@@ -59,16 +97,17 @@ const About = () => {
           "EMOR was built for businesses that want digital presence with class and performance."
         )}
         subtitle={t(
-          "Ne jemi partner për branding, websites, creative systems dhe rritje të menduar.",
-          "We are a partner for branding, websites, creative systems, and thoughtful growth."
+          "Ne jemi partner për branding, websites, AI dhe rritje të menduar.",
+          "We are a partner for branding, websites, AI, and thoughtful growth."
         )}
         stats={[
           { label: t("Qasje", "Approach"), value: t("Brand-first", "Brand-first") },
-          { label: t("Stil", "Style"), value: t("Elegant + Strategic", "Elegant + Strategic") },
-          { label: t("Qëllim", "Goal"), value: t("Trust + Growth", "Trust + Growth") },
+          { label: t("Stil", "Style"), value: t("Elegant + Strategjik", "Elegant + Strategic") },
+          { label: t("Qëllim", "Goal"), value: t("Besim + Rritje", "Trust + Growth") },
         ]}
       />
 
+      {/* MISSION / VISION */}
       <section className="section-padding pt-6">
         <div className="container mx-auto px-4 lg:px-8">
           <motion.div
@@ -135,7 +174,60 @@ const About = () => {
         </div>
       </section>
 
+      {/* HOW WE WORK — PROCESS */}
       <section className="section-padding bg-secondary/20">
+        <div className="container mx-auto px-4 lg:px-8">
+          <SectionHeading
+            label={t("Si punojmë", "How we work")}
+            title={t(
+              "Nga kontakti i parë deri te rezultati final.",
+              "From first contact to final result."
+            )}
+            subtitle={t(
+              "Procesi ynë është i thjeshtë, i qartë dhe pa komplikime. Ja çfarë ndodh kur zgjidhni EMOR.",
+              "Our process is simple, clear, and straightforward. Here's what happens when you choose EMOR."
+            )}
+          />
+
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {processSteps.map((step, index) => (
+              <PremiumCard
+                key={step.step}
+                custom={index}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={fadeUp}
+                className="px-4 py-4"
+              >
+                <div className="flex items-start justify-between">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-[0.75rem] border border-primary/15 bg-primary/10 text-primary">
+                    <step.icon size={16} />
+                  </div>
+                  <span className="text-[1.6rem] font-extrabold tracking-[-0.06em] text-white/8 select-none">
+                    {step.step}
+                  </span>
+                </div>
+                <h3 className="mt-3 text-[0.95rem] font-bold tracking-[-0.02em] text-white">
+                  {t(step.titleAl, step.titleEn)}
+                </h3>
+                <p className="mt-2 text-[0.78rem] leading-relaxed text-muted-foreground">
+                  {t(step.descAl, step.descEn)}
+                </p>
+              </PremiumCard>
+            ))}
+          </div>
+
+          <div className="mt-6 text-center">
+            <Link to="/contact" className="btn-primary inline-flex">
+              {t("Fillo tani", "Get started")} <ArrowRight size={15} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* VALUES */}
+      <section className="section-padding">
         <div className="container mx-auto px-4 lg:px-8">
           <SectionHeading
             label={t("Vlerat tona", "Our values")}
@@ -175,7 +267,8 @@ const About = () => {
         </div>
       </section>
 
-      <section className="section-padding">
+      {/* TEAM */}
+      <section className="section-padding bg-secondary/20">
         <div className="container mx-auto px-4 lg:px-8">
           <SectionHeading
             label={t("Ekipi", "Team")}
@@ -186,7 +279,7 @@ const About = () => {
             )}
           />
 
-          <div className="grid gap-4 md:grid-cols-2">
+          <div className="grid gap-4 md:grid-cols-2 max-w-2xl mx-auto">
             {founders.map((founder, index) => (
               <PremiumCard
                 key={founder.name}
@@ -195,12 +288,31 @@ const About = () => {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
                 variants={fadeUp}
-                className="px-4 py-4 text-center"
+                className="px-5 py-5 text-center"
               >
-                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-primary/15 bg-primary/10 text-lg font-bold text-primary shadow-[0_0_24px_rgba(212,177,61,0.1)]">
-                  {founder.name.split(" ").map((part) => part[0]).join("")}
+                <div className="mx-auto h-24 w-24 overflow-hidden rounded-full border-2 border-primary/25 shadow-[0_0_32px_rgba(212,177,61,0.15)]">
+                  <img
+                    src={founder.photo}
+                    alt={founder.name}
+                    className="h-full w-full object-cover object-top"
+                    onError={(e) => {
+                      const target = e.currentTarget;
+                      target.style.display = "none";
+                      const parent = target.parentElement;
+                      if (parent) {
+                        parent.style.display = "flex";
+                        parent.style.alignItems = "center";
+                        parent.style.justifyContent = "center";
+                        parent.style.fontSize = "1.4rem";
+                        parent.style.fontWeight = "700";
+                        parent.style.color = "hsl(44 71% 58%)";
+                        parent.style.background = "rgba(212,177,61,0.08)";
+                        parent.innerText = founder.name.split(" ").map((p) => p[0]).join("");
+                      }
+                    }}
+                  />
                 </div>
-                <h3 className="mt-3 text-[1.1rem] font-bold tracking-[-0.03em] text-white">
+                <h3 className="mt-4 text-[1.1rem] font-bold tracking-[-0.03em] text-white">
                   {founder.name}
                 </h3>
                 <p className="mt-1 text-[0.68rem] font-medium uppercase tracking-[0.16em] text-primary/90">

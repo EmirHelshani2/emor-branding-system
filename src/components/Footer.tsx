@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
-import { Instagram, Mail } from "lucide-react";
+import { Instagram, Mail, Phone } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import logo from "@/assets/emor-logo.png";
+
+const CONTACT_PHONES = ["+383 49 569 626", "+383 45 224 443"];
 
 const Footer = () => {
   const { t } = useLanguage();
@@ -14,7 +16,7 @@ const Footer = () => {
             <img
               src={logo}
               alt="EMOR Marketing"
-              className="h-9 w-auto"
+              className="h-12 w-auto"
             />
             <p className="mt-4 max-w-sm text-[0.875rem] leading-relaxed text-muted-foreground">
               {t(
@@ -66,21 +68,31 @@ const Footer = () => {
             </h3>
             <div className="mt-2.5 flex flex-col gap-2">
               <a
-                href="mailto:info@emormarketing.com"
+                href="mailto:emormarketing1@gmail.com"
                 className="flex items-center gap-2 text-[0.8rem] text-muted-foreground transition hover:text-white"
               >
                 <Mail size={13} className="text-primary" />
-                info@emormarketing.com
+                emormarketing1@gmail.com
               </a>
               <a
-                href="https://instagram.com/emormarketing"
+                href="https://instagram.com/emor_marketing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-[0.8rem] text-muted-foreground transition hover:text-white"
               >
                 <Instagram size={13} className="text-primary" />
-                @emormarketing
+                @emor_marketing
               </a>
+              {CONTACT_PHONES.map((phone) => (
+                <a
+                  key={phone}
+                  href={`tel:${phone.replace(/\s/g, "")}`}
+                  className="flex items-center gap-2 text-[0.8rem] text-muted-foreground transition hover:text-white"
+                >
+                  <Phone size={13} className="text-primary" />
+                  {phone}
+                </a>
+              ))}
             </div>
           </div>
         </div>

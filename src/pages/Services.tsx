@@ -11,6 +11,8 @@ const Services = () => {
   const services = [
     {
       icon: Share2,
+      pricingTab: "social",
+      contactPackage: "Social Media Management",
       titleAl: "Social Media Management",
       titleEn: "Social Media Management",
       descAl:
@@ -44,6 +46,8 @@ const Services = () => {
     },
     {
       icon: Globe,
+      pricingTab: "website",
+      contactPackage: "Website Development",
       titleAl: "Website Development",
       titleEn: "Website Development",
       descAl:
@@ -62,7 +66,9 @@ const Services = () => {
         "Panel admin për ndryshim çmimesh",
         "Mbështetje bazë të dhënash",
         "Dizajn responsive (desktop & mobile)",
-        "Mirëmbajtje mujore e sigurt",
+        "SSL & HTTPS — siguri e plotë e të dhënave",
+        "Backup i rregullt — website gjithmonë i sigurt",
+        "Mirëmbajtje mujore teknike",
       ],
       featuresEn: [
         "Landing Page: one-page website (€49.99)",
@@ -72,11 +78,15 @@ const Services = () => {
         "Admin page for updating prices",
         "Database support",
         "Responsive design (desktop & mobile)",
-        "Secure monthly maintenance",
+        "SSL & HTTPS — full data security",
+        "Regular backups — website always safe",
+        "Monthly technical maintenance",
       ],
     },
     {
       icon: Bot,
+      pricingTab: "chatbot",
+      contactPackage: "AI Chatbot",
       titleAl: "AI Chatbots",
       titleEn: "AI Chatbots",
       descAl:
@@ -122,20 +132,6 @@ const Services = () => {
           "Social media, website dhe AI chatbot — ndërtuar për biznese që duan prani profesionale online.",
           "Social media, website, and AI chatbot — built for businesses that want a professional online presence."
         )}
-        stats={[
-          {
-            label: t("Social Media nga", "Social Media from"),
-            value: "€69.99/mo",
-          },
-          {
-            label: t("Website nga", "Website from"),
-            value: "€49.99",
-          },
-          {
-            label: t("AI Chatbot nga", "AI Chatbot from"),
-            value: "€59.99",
-          },
-        ]}
       />
 
       <section className="section-padding pt-6">
@@ -204,10 +200,20 @@ const Services = () => {
                       </div>
                     </div>
 
-                    <Link to="/contact" className="btn-secondary mt-5 w-full !text-[0.875rem]">
-                      {t("Diskuto këtë shërbim", "Discuss this service")}{" "}
-                      <ArrowRight size={14} />
-                    </Link>
+                    <div className="mt-5 grid grid-cols-2 gap-2">
+                      <Link
+                        to={`/pricing?tab=${service.pricingTab}`}
+                        className="btn-secondary w-full !text-[0.82rem]"
+                      >
+                        {t("Shiko çmimet", "View pricing")} <ArrowRight size={13} />
+                      </Link>
+                      <Link
+                        to={`/contact?package=${encodeURIComponent(service.contactPackage)}`}
+                        className="btn-primary w-full !text-[0.82rem]"
+                      >
+                        {t("Fillo tani", "Get started")} <ArrowRight size={13} />
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </PremiumCard>

@@ -1,13 +1,17 @@
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { ArrowRight, Bot, Check, Globe, Package, Share2, Star } from "lucide-react";
-import PageHero from "@/components/PageHero";
 import PremiumCard from "@/components/PremiumCard";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { fadeUp } from "@/lib/motion";
 
+const VALID_TABS = ["social", "website", "chatbot", "combos"] as const;
+
 const Pricing = () => {
   const { lang, t } = useLanguage();
+  const [searchParams] = useSearchParams();
+  const tabParam = searchParams.get("tab") ?? "";
+  const defaultTab = (VALID_TABS as readonly string[]).includes(tabParam) ? tabParam : "social";
 
   const socialPlans = [
     {
@@ -235,7 +239,8 @@ const Pricing = () => {
       monthly: "€69.99",
       toneEn: "Social media management plus a one-page website.",
       toneAl: "Menaxhim rrjetesh sociale plus website një faqesh.",
-      badge: "Popular",
+      badgeAl: "Popullor",
+      badgeEn: "Popular",
       highlight: false,
       featuresEn: [
         "3 posts/week, 3 stories/week",
@@ -257,7 +262,8 @@ const Pricing = () => {
       monthly: "€89.99",
       toneEn: "Complete digital package — social media, custom website, and AI chatbot.",
       toneAl: "Paketë e plotë — social media, website custom dhe AI chatbot.",
-      badge: "Best Value",
+      badgeAl: "Vlera më e mirë",
+      badgeEn: "Best Value",
       highlight: true,
       featuresEn: [
         "Profile cleanup + 4 posts/week + 4 stories/week",
@@ -281,7 +287,8 @@ const Pricing = () => {
       monthly: "€29.99",
       toneEn: "A simple website with an AI chatbot for visitor messages.",
       toneAl: "Website e thjeshtë me chatbot AI për mesazhet e vizitorëve.",
-      badge: null,
+      badgeAl: null,
+      badgeEn: null,
       highlight: false,
       featuresEn: [
         "One-page website with contact form",
@@ -301,7 +308,8 @@ const Pricing = () => {
       monthly: "€119.99",
       toneEn: "Social media management with an AI chatbot on one platform.",
       toneAl: "Menaxhim rrjetesh me chatbot AI në një platformë.",
-      badge: null,
+      badgeAl: null,
+      badgeEn: null,
       highlight: false,
       featuresEn: [
         "3 posts/week, 3 stories/week",
@@ -337,7 +345,7 @@ const Pricing = () => {
     platforms?: string;
     features: string[];
     highlight: boolean;
-    badge?: string | null;
+    badge?: string | null | undefined;
   }) => (
     <PremiumCard
       initial="hidden"
@@ -369,7 +377,7 @@ const Pricing = () => {
           <span className="text-[1.75rem] font-extrabold tracking-[-0.05em] gold-gradient-text">
             {monthly}
           </span>
-          <span className="ml-1 text-[0.78rem] text-muted-foreground">/month</span>
+          <span className="ml-1 text-[0.78rem] text-muted-foreground">{t("/muaj", "/month")}</span>
         </div>
         {firstMonth && (
           <p className="text-[0.75rem] text-primary/70">
@@ -398,7 +406,10 @@ const Pricing = () => {
         ))}
       </div>
 
-      <Link to="/contact" className={highlight ? "btn-primary mt-4 w-full !text-[0.875rem]" : "btn-secondary mt-4 w-full !text-[0.875rem]"}>
+      <Link
+        to={`/contact?package=${encodeURIComponent(name)}`}
+        className={highlight ? "btn-primary mt-4 w-full !text-[0.875rem]" : "btn-secondary mt-4 w-full !text-[0.875rem]"}
+      >
         {t("Fillo tani", "Get started")} <ArrowRight size={14} />
       </Link>
     </PremiumCard>
@@ -406,26 +417,9 @@ const Pricing = () => {
 
   return (
     <main className="pb-14 md:pb-16">
-      <PageHero
-        label={t("Çmimet & Paketat", "Pricing & Packages")}
-        title={t(
-          "Çmime të qarta. Pa surpriza.",
-          "Clear pricing. No surprises."
-        )}
-        subtitle={t(
-          "Zgjidhni shërbimin që i përshtatet biznesit tuaj. Çdo paketë është gati për të filluar.",
-          "Choose the service that fits your business. Every package is ready to start."
-        )}
-        stats={[
-          { label: t("Social Media nga", "Social Media from"), value: "€69.99/mo" },
-          { label: t("Website nga", "Website from"), value: "€49.99" },
-          { label: t("AI Chatbot nga", "AI Chatbot from"), value: "€59.99" },
-        ]}
-      />
-
-      <section className="section-padding pt-6">
+      <section className="section-padding pt-10">
         <div className="container mx-auto px-4 lg:px-8">
-          <Tabs defaultValue="social">
+          <Tabs defaultValue={defaultTab}>
             <div className="mb-8 overflow-x-auto">
               <TabsList className="inline-flex h-auto gap-1.5 rounded-2xl border border-white/10 bg-white/[0.03] p-1.5">
                 <TabsTrigger
@@ -507,7 +501,7 @@ const Pricing = () => {
                     name={t(plan.nameAl, plan.nameEn)}
                     tone={t(plan.toneAl, plan.toneEn)}
                     oneTime={plan.oneTime}
-                    monthly={`€${plan.monthly.replace("€", "")}/mo maintenance`}
+                    monthly={`€${plan.monthly.replace("€", "")}/${t("muaj mirëmbajtje", "mo maintenance")}`}
                     features={lang === "al" ? plan.featuresAl : plan.featuresEn}
                     highlight={plan.highlight}
                     badge={plan.highlight ? t("Rekomanduar", "Recommended") : null}
@@ -535,7 +529,7 @@ const Pricing = () => {
                     name={t(plan.nameAl, plan.nameEn)}
                     tone={t(plan.toneAl, plan.toneEn)}
                     oneTime={plan.oneTime}
-                    monthly={`${plan.monthly}/mo`}
+                    monthly={`${plan.monthly}/${t("muaj", "mo")}`}
                     features={lang === "al" ? plan.featuresAl : plan.featuresEn}
                     highlight={plan.highlight}
                     badge={plan.highlight ? t("Rekomanduar", "Recommended") : null}
@@ -566,7 +560,7 @@ const Pricing = () => {
                     monthly={combo.monthly}
                     features={lang === "al" ? combo.featuresAl : combo.featuresEn}
                     highlight={combo.highlight}
-                    badge={combo.badge}
+                    badge={combo.badgeAl ? t(combo.badgeAl, combo.badgeEn ?? "") : null}
                   />
                 ))}
               </div>
@@ -590,7 +584,7 @@ const Pricing = () => {
                 "Contact us and we will build a custom package based on your exact needs."
               )}
             </p>
-            <Link to="/contact" className="btn-primary mt-5 inline-flex">
+            <Link to="/contact?package=Custom" className="btn-primary mt-5 inline-flex">
               {t("Kontakto tani", "Contact us")} <ArrowRight size={15} />
             </Link>
           </PremiumCard>
